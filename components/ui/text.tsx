@@ -9,7 +9,7 @@ const textVariants = cva("text-inherit leading-0", {
       xs: "text-xs",
       sm: "text-sm",
       base: "text-md",
-      lg: "text-lg",
+      lg: "text-[60px]",
       xl: "text-xl",
       "2xl": "text-2xl",
       "3xl": "text-3xl",
@@ -20,6 +20,7 @@ const textVariants = cva("text-inherit leading-0", {
       medium: "font-medium",
       semibold: "font-semibold",
       bold: "font-bold",
+      extrabold: "font-[900]",
     },
   },
   defaultVariants: {
@@ -50,6 +51,7 @@ export interface TextProps<T extends TextElement = "p">
   children?: React.ReactNode
   /** Truncate to a single line with ellipsis. */
   truncate?: boolean
+  style?: React.CSSProperties
 }
 
 const Text = forwardRef<HTMLElement, TextProps<TextElement>>(

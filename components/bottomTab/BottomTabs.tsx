@@ -34,7 +34,7 @@ export default function BottomTabs() {
         },
     ]
 
-    const onTabClick = (tab) => {
+    const onTabClick = (tab: string) => {
         setActiveTab(tab)
     }
 

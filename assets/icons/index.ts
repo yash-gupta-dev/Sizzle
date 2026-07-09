@@ -15,4 +15,6 @@ export { default as HomeFilledIcon } from "@/assets/icons/home-filled.svg";
 export { default as ExploreFilledIcon } from "@/assets/icons/explore-filled.svg";
 export { default as SearchFilledIcon } from "@/assets/icons/search-filled.svg";
 export { default as LeaderBoardFilledIcon } from "@/assets/icons/leaderboard-filled.svg";
+export { default as LeaderBoardGradientIcon } from "@/assets/icons/leaderboard-grdient.svg";
 export { default as SaveFilledIcon } from "@/assets/icons/save-filled.svg";
+export { default as EyeIcon } from "@/assets/icons/eye.svg";
