@@ -1,0 +1,9 @@
+export { default as AddIcon } from "@/assets/icons/add.svg";
+export { default as MultipleStarsIcon } from "@/assets/icons/multiple-stars.svg";
+export { default as UserStarsIcon } from "@/assets/icons/user-stars.svg";
+export { default as CrownRewardIcon } from "@/assets/icons/crown-reward.svg";
+export { default as LeaderBoardIcon } from "@/assets/icons/leaderboard.svg";
+export { default as SizzleLogo } from "@/assets/icons/Sizzle+_Logo.svg";
+export { default as ChatBubbleIcon } from "@/assets/icons/chat-bubble.svg";
+export { default as BellNotificationIcon } from "@/assets/icons/bell-notification.svg";
+export { default as UsdCircleIcon } from "@/assets/icons/usd-circle.svg";
