@@ -6,13 +6,13 @@ import { cn } from "@/lib/utils"
 import { Text } from "./text"
 
 const buttonVariants = cva(
-  "flex items-center justify-center p-[20px] gap-1.5 rounded-[14px] group/button",
+  "flex items-center justify-center p-[20px] gap-1.5 rounded-[14px] group/button hover:cursor-pointer",
   {
     variants: {
       variant: {
-        default: " bg-[var(--foreground)] text-black hover:bg-primary/80",
-        inactive: " bg-[var(--card)] text-[var(--card-foreground)] hover:bg-primary/80",
-        inactiveWithActiveText: " bg-[var(--card)] text-[var(--foreground)] hover:bg-primary/80",
+        default: " bg-[var(--card)] text-[var(--card-foreground)] hover:bg-[var(--card-inactive-hover)] hover:text-foreground",
+        active: " bg-[var(--foreground)] text-black hover:bg-[var(--card-hover)]",
+        inactiveWithActiveText: " bg-[var(--card)] text-[var(--foreground)] hover:bg-[var(--card-inactive-hover)]",
       },
       size: {
         default:
@@ -27,10 +27,15 @@ const buttonVariants = cva(
           "size-7 rounded-[min(var(--radius-md),12px)] in-data-[slot=button-group]:rounded-lg",
         "icon-lg": "size-9",
       },
+      bordered: {
+        default: "border-0",
+        slim: "border border-[var(--gray-border)] hover:border-[var(--light-gray-border)]"
+      }
     },
     defaultVariants: {
       variant: "default",
       size: "default",
+      bordered: "default"
     },
   }
 )
@@ -58,9 +63,10 @@ export interface ButtonProps
 
 function Button({
   className,
-  variant = "default",
-  size = "default",
-  weight = "normal",
+  variant,
+  size,
+  bordered,
+  weight,
   icon,
   children,
   ...props
@@ -77,12 +83,12 @@ function Button({
     <ButtonPrimitive
       data-slot="button"
       className={cn(
-        buttonVariants({ variant, size: resolvedSize, className })
+        buttonVariants({ variant, bordered, size: resolvedSize, className })
       )}
       {...props}
     >
       {icon && <span data-icon="inline-start">{icon}</span>}
-      {children && <Text>{children}</Text>}
+      {children && <Text weight={weight}>{children}</Text>}
     </ButtonPrimitive>
   )
 }

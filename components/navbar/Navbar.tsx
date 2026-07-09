@@ -11,9 +11,9 @@ export default function Navbar() {
                 <nav className="flex w-full items-center justify-between">
                     {/* Left Nav */}
                     <div className="flex flex-1 gap-2">
-                        <Button icon={<MultipleStarsIcon className="w-4 h-4" />} weight={"semibold"}>For You</Button>
-                        <Button icon={<UserStarsIcon className="w-4 h-4" />} weight={"semibold"} variant={"inactive"}>Following</Button>
-                        <Button icon={<CrownRewardIcon className="w-4 h-4" />} weight={"semibold"} variant={"inactive"}>Membership</Button>
+                        <Button icon={<MultipleStarsIcon className="w-4 h-4" />} variant={"active"}>For You</Button>
+                        <Button icon={<UserStarsIcon className="w-4 h-4" />}>Following</Button>
+                        <Button icon={<CrownRewardIcon className="w-4 h-4" />}>Memberships</Button>
                     </div>
 
                     {/* Center Logo */}
@@ -23,16 +23,30 @@ export default function Navbar() {
                     <div className="flex flex-1 items-center justify-end gap-2">
                         <Button
                             icon={<AddIcon className="w-3.5 h-3.5 text-foreground" />}
-                            weight={"bold"}
                             className="bg-center bg-cover text-foreground"
                             style={{ backgroundImage: `url('/images/gradient-background.png')` }}
+                            weight={"normal"}
                         >
                             Create
                         </Button>
 
-                        <Button icon={<ChatBubbleIcon className="w-4 h-4" />} weight={"semibold"} variant={"inactiveWithActiveText"} />
-                        <Button icon={<BellNotificationIcon className="w-4 h-4" />} weight={"semibold"} variant={"inactiveWithActiveText"} />
-                        <Button icon={<UsdCircleIcon className="w-4 h-4" />} weight={"semibold"} variant={"inactiveWithActiveText"}>
+                        <Button
+                            icon={<ChatBubbleIcon className="w-4 h-4" />}
+                            variant={"inactiveWithActiveText"}
+                            bordered={"slim"}
+                        />
+
+                        <Button
+                            icon={<BellNotificationIcon className="w-4 h-4" />}
+                            variant={"inactiveWithActiveText"}
+                            bordered={"slim"}
+                        />
+
+                        <Button
+                            icon={<UsdCircleIcon className="w-4 h-4" />}
+                            variant={"inactiveWithActiveText"}
+                            bordered={"slim"}
+                        >
                             1280.55
                         </Button>
 

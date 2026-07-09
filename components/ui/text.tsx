@@ -24,7 +24,7 @@ const textVariants = cva("text-inherit leading-0", {
   },
   defaultVariants: {
     size: "base",
-    weight: "normal",
+    weight: "semibold",
   },
 })
 
@@ -54,7 +54,7 @@ export interface TextProps<T extends TextElement = "p">
 
 const Text = forwardRef<HTMLElement, TextProps<TextElement>>(
   (
-    { as, size = "base", weight = "normal", truncate, className, children, ...props },
+    { as, size = "base", weight = "semibold", truncate, className, children, ...props },
     ref
   ) => {
     const resolvedSize = size ?? "base"

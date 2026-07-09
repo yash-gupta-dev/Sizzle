@@ -10,10 +10,13 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Neue Plak"', "sans-serif"],
-        condensed: ['"Neue Plak Condensed"', "sans-serif"],
-        extended: ['"Neue Plak Extended"', "sans-serif"],
-        text: ['"Neue Plak Text"', "sans-serif"],
+        plak: ["var(--font-plak)"],
+        "plak-text": ["var(--font-plak-text)"],
+        "plak-compressed": ["var(--font-plak-compressed)"],
+        "plak-condensed": ["var(--font-plak-condensed)"],
+        "plak-extended": ["var(--font-plak-extended)"],
+        "plak-narrow": ["var(--font-plak-narrow)"],
+        "plak-wide": ["var(--font-plak-wide)"],
       },
     },
   },
