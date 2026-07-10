@@ -21,3 +21,7 @@ export { default as EyeIcon } from "@/assets/icons/eye.svg";
 export { default as RightDirectionIcon } from "@/assets/icons/right-direction.svg";
 export { default as PlaylistIcon } from "@/assets/icons/play-list.svg";
 export { default as GalleryIcon } from "@/assets/icons/gallery.svg";
+export { default as LockFilledIcon } from "@/assets/icons/lock-filled.svg";
+export { default as HeartFilledIcon } from "@/assets/icons/heart-filled.svg";
+export { default as OptionsIcon } from "@/assets/icons/options.svg";
+export { default as SaveBookmarkIcon } from "@/assets/icons/save-bookmark.svg";

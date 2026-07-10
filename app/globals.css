@@ -52,6 +52,7 @@
   --card-inactive-hover: oklch(27.8% 0.004 286.2);
   --card-foreground: oklch(0.7155 0 0);
   --card-hover: oklch(0.8954 0.0075 80.72);
+  --lock-yellow-card: #F4BB2E;
   --gray-border: oklch(0.3211 0 0);
   --light-gray-border: oklch(0.3986 0.0033 286.25);
   --bottom-tab: oklch(0.1917 0.002 286.21);

@@ -1,152 +1,12 @@
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import HeroCard from "@/components/hero/heroCard"
 import SliderHOC from "@/hoc/SliderHOC"
-import CreatorStarCard from "@/components/creatorStar/CreatorStarCard"
+import CreatorStarCard from "@/components/creator/CreatorStarCard"
+import CategoryCard from "@/components/cartegories/CategoryCard";
+import { TEMP_CATEGORIES, TEMP_CREATOR_DATA, TEMP_FEATURED_CREATORS, TEMP_HERO_DATA } from "@/data/demo.data";
+import CreatorPostCard from "@/components/creator/CreatorPostCard";
 
 export default function Page() {
-  const TEMP_HERO_DATA = [
-    {
-      image: "/images/banner1.webp",
-      badge: "ORIGINAL",
-      logo: "/images/Chucky_logo.png",
-      director: "Adela Morales",
-      duration: "6:03",
-      tags: ["Beauty"],
-      views: 812,
-      description: 'Seems like you have found a LUCKY POST on your feed 💖😊 today is gonna be a good',
-      stats: {}
-    },
-    {
-      image: "/images/banner2.webp",
-      badge: "TOP EARNER",
-      logo: "/images/American-Pie.png",
-      director: "Saint Lavigne",
-      duration: "6:03",
-      tags: ["Beauty"],
-      views: 812,
-      description: "Life got so serious lately, I have almost forgot I used to paint 😅 may this post will be a",
-      stats: {}
-    },
-  ];
-
-  const TEMP_CREATOR_DATA = [
-    {
-      id:1,
-      image: '/images/creator-star1.jpg',
-      name: "Sable Monroe",
-      photos: 12,
-      videos: 1
-    },
-    {
-      id:2,
-      image: '/images/creator-star2.jpg',
-      name: "Roxie Sinclair",
-      photos: 44,
-      videos: 3
-    },
-    {
-      id:3,
-      image: '/images/creator-star1.jpg',
-      name: "Sable Monroe",
-      photos: 12,
-      videos: 1
-    },
-    {
-      id:4,
-      image: '/images/creator-star2.jpg',
-      name: "Roxie Sinclair",
-      photos: 44,
-      videos: 3
-    },
-    {
-      id:5,
-      image: '/images/creator-star1.jpg',
-      name: "Sable Monroe",
-      photos: 12,
-      videos: 1
-    },
-    {
-      id:6,
-      image: '/images/creator-star2.jpg',
-      name: "Roxie Sinclair",
-      photos: 44,
-      videos: 3
-    },
-    {
-      id:7,
-      image: '/images/creator-star1.jpg',
-      name: "Sable Monroe",
-      photos: 12,
-      videos: 1
-    },
-    {
-      id:8,
-      image: '/images/creator-star2.jpg',
-      name: "Roxie Sinclair",
-      photos: 44,
-      videos: 3
-    },
-    {
-      id:9,
-      image: '/images/creator-star1.jpg',
-      name: "Sable Monroe",
-      photos: 12,
-      videos: 1
-    },
-    {
-      id:10,
-      image: '/images/creator-star2.jpg',
-      name: "Roxie Sinclair",
-      photos: 44,
-      videos: 3
-    }
-  ]
-
-  const TEMP_CATEGORIES = [
-    {
-      title: "Food",
-      images: [
-        '/images/creator-star2.jpg',
-        '/images/creator-star1.jpg'
-      ]
-    },
-    {
-      title: "Cooking",
-      images: [
-        '/images/creator-star2.jpg',
-        '/images/creator-star1.jpg'
-      ]
-    },
-    {
-      title: "Beats",
-      images: [
-        '/images/creator-star2.jpg',
-        '/images/creator-star1.jpg'
-      ]
-    },
-    {
-      title: "Gaming",
-      images: [
-        '/images/creator-star2.jpg',
-        '/images/creator-star1.jpg'
-      ]
-    },
-    {
-      title: "Lifestyle",
-      images: [
-        '/images/creator-star2.jpg',
-        '/images/creator-star1.jpg'
-      ]
-    },
-    {
-      title: "Beauty",
-      images: [
-        '/images/creator-star2.jpg',
-        '/images/creator-star1.jpg'
-      ]
-    },
-  ]
-
   return (
     <div className="flex flex-col pb-30">
       {/* MARK: Hero */}
@@ -191,7 +51,29 @@ export default function Page() {
         {
           TEMP_CATEGORIES.map(category => {
             return <CarouselItem className="md:basis-1/6 max-w-fit p-0" key={category.title}>
-              
+              <CategoryCard name={category.title} images={category.images} />
+            </CarouselItem>
+          })
+        }
+      </SliderHOC>
+
+      {/* MARK: Featured Creators */}
+      <SliderHOC title="Creators for you" supTitle="Based on your memberships" contentClassName="gap-0">
+        {
+          TEMP_FEATURED_CREATORS.map((creator, i) => {
+            return <CarouselItem className="max-w-78 p-0" key={creator.title + i}>
+              <CreatorPostCard {...creator} />
+            </CarouselItem>
+          })
+        }
+      </SliderHOC>
+
+      {/* MARK: Order Personal */}
+      <SliderHOC title="Order something personal" contentClassName="gap-0">
+        {
+          TEMP_FEATURED_CREATORS.map((creator, i) => {
+            return <CarouselItem className="max-w-78 p-0" key={creator.title + i}>
+              <CreatorPostCard {...creator} />
             </CarouselItem>
           })
         }

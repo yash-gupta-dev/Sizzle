@@ -8,22 +8,24 @@ import { PropsWithChildren } from "react";
 export interface CategoriesCardProps {
     title: string;
     supTitle?: string;
-    className?: ClassValue
+    className?: ClassValue;
+    contentClassName?: ClassValue;
 }
 
 function SliderHOC({
     title,
     supTitle,
     children,
-    className
+    className,
+    contentClassName
 }: PropsWithChildren<CategoriesCardProps>) {
 
     return (
         <>
             <div className="px-7.5 mt-14.25 mb-7.5">
-                {supTitle && <Text size={'md'}>{supTitle}</Text>}
+                {supTitle && <Text size={'sm'} weight={'normal'} className="mb-2 text-(--hero-director-text)">{supTitle}</Text>}
                 <div className="flex items-center gap-[8.75px]">
-                    <Text className="leading-none">{title}</Text>
+                    <Text className="leading-none" size={'md'}>{title}</Text>
                     <RightDirectionIcon className="h-2.5" />
                 </div>
             </div>
@@ -33,7 +35,7 @@ function SliderHOC({
                 slidesToScroll: 1,  // step one slide at a time
                 skipSnaps: true
             }}>
-                <CarouselContent className="w-full ml-0 flex gap-3.75">
+                <CarouselContent className={cn("w-full ml-0 flex gap-3.75", contentClassName)}>
                     {children}
                 </CarouselContent>
             </Carousel>
