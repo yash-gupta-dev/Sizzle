@@ -7,8 +7,9 @@ const textVariants = cva("text-inherit leading-0", {
   variants: {
     size: {
       xs: "text-xs",
-      sm: "text-sm",
+      sm: "text-[14px]",
       base: "text-md",
+      md: "text-[24px]",
       lg: "text-[60px]",
       xl: "text-xl",
       "2xl": "text-2xl",
@@ -34,6 +35,7 @@ const defaultElementMap = {
   xs: "span",
   sm: "span",
   base: "p",
+  md: "p",
   lg: "p",
   xl: "h3",
   "2xl": "h2",

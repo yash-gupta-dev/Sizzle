@@ -44,7 +44,7 @@ export default function BottomTabs() {
             aria-label="Bottom navigation"
         >
             <div
-                className={"flex items-center justify-between rounded-[34px] px-10 py-3.75 bg-(--bottom-tab) backdrop-blur-xl backdrop-saturate-150 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border-t border-t-(--gray-border)"}
+                className={"flex items-center justify-between rounded-[34px] px-10 py-3.75 bg-(--bottom-tab)/45 backdrop-blur-xl backdrop-saturate-150 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border-t border-t-(--gray-border)"}
             >
                 {
                     tabs.map(t => {

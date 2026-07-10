@@ -18,3 +18,6 @@ export { default as LeaderBoardFilledIcon } from "@/assets/icons/leaderboard-fil
 export { default as LeaderBoardGradientIcon } from "@/assets/icons/leaderboard-grdient.svg";
 export { default as SaveFilledIcon } from "@/assets/icons/save-filled.svg";
 export { default as EyeIcon } from "@/assets/icons/eye.svg";
+export { default as RightDirectionIcon } from "@/assets/icons/right-direction.svg";
+export { default as PlaylistIcon } from "@/assets/icons/play-list.svg";
+export { default as GalleryIcon } from "@/assets/icons/gallery.svg";

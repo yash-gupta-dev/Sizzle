@@ -6,11 +6,11 @@ import { cn } from "@/lib/utils"
 import { Text } from "./text"
 
 const buttonVariants = cva(
-  "flex flex-col w-25 h-[60px] items-center justify-center gap-1 rounded-[20px] group/button hover:cursor-pointer",
+  "flex flex-col w-25 h-[60px] items-center justify-center gap-1 rounded-[20px] group/button cursor-pointer",
   {
     variants: {
       variant: {
-        default: "bg-(--card) text-[var(--card-foreground)] hover:text-foreground",
+        default: "text-[var(--card-foreground)] hover:text-foreground",
         active: "bg-(--bottom-tab-active) text-white hover:bg-(--bottom-tab-active)",
       },
       size: {

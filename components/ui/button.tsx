@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 import { Text } from "./text"
 
 const buttonVariants = cva(
-  "flex items-center justify-center p-[20px] gap-1.5 rounded-[14px] group/button hover:cursor-pointer",
+  "flex items-center justify-center p-[20px] gap-1.5 rounded-[14px] group/button cursor-pointer",
   {
     variants: {
       variant: {
