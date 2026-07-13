@@ -10,6 +10,7 @@ import CreatorSuggestionSection from "@/components/creator/CreatorSuggestionSect
 import CategoryChip from "@/components/cartegories/CategoryChip";
 import CreatorSmallCard from "@/components/creator/CreatorSmallCard";
 import HottestCreatorCard from "@/components/creator/HottestCreatorCard";
+import EveryonesBookingCreatorCard from "@/components/creator/EveryonesBookingCreatorCard";
 
 export default function Page() {
   return (
@@ -174,6 +175,23 @@ export default function Page() {
       </SliderHOC>
 
       <CreatorSuggestionSection {...TEMP_CREATOR_SUGGESTION_CARD} />
+
+      <SliderHOC title="Top rated this week" supTitle="The 10 everyone's booking" className="pl-7.5" contentClassName="gap-30 pl-23.5">
+        {
+          TEMP_CREATOR_DATA.map((c, i) => <EveryonesBookingCreatorCard {...c} key={c.id} rank={i + 1} />)
+
+        }
+      </SliderHOC>
+
+      <SliderHOC title="Fresh from creators you tipped" contentClassName="gap-0">
+        {
+          TEMP_FEATURED_CREATORS.map((creator, i) => {
+            return <CarouselItem className="basis-1/4 w-78 p-0" key={creator.title + i}>
+              <CreatorPostCard {...creator} />
+            </CarouselItem>
+          })
+        }
+      </SliderHOC>
 
     </div>
   )

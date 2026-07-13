@@ -6,13 +6,15 @@ export interface HottestCreatorCardProps {
     rank: number;
     name: string;
     image: string;
+    primaryColor?: string;
     categories: string[];
 }
 
-function HottestCreatorCard({
+function EveryonesBookingCreatorCard({
     name,
     rank,
     image,
+    primaryColor,
     categories
 }: HottestCreatorCardProps) {
 
@@ -28,9 +30,16 @@ function HottestCreatorCard({
 
                 <div className="relative pl-5 pb-5 w-full rounded-b-[15px]"
                     style={{
-                        backgroundImage: 'linear-gradient(to bottom, #00000000 10%, #000000 100%)'
+                        backgroundImage: `linear-gradient(to bottom, #00000000 0%, ${primaryColor} 90%, ${primaryColor})`
                     }}
                 >
+                    <div
+                        className="absolute inset-0 backdrop-blur-md z-10 rounded-b-[15px]"
+                        style={{
+                            maskImage: "linear-gradient(to bottom, transparent 10%, black 100%)",
+                            WebkitMaskImage: "linear-gradient(to bottom, transparent 10%, black 100%)",
+                        }}
+                    />
                     <div className="relative flex items-center w-fit bg-translucent-bg py-1.75 px-2.5 gap-1.25 text-[10px] rounded-[6px] z-20">
                         {
                             <LeaderBoardGradientIcon />
@@ -54,4 +63,4 @@ function HottestCreatorCard({
     )
 }
 
-export default HottestCreatorCard 
+export default EveryonesBookingCreatorCard 
