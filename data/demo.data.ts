@@ -27,6 +27,7 @@ export const TEMP_CREATOR_DATA = [
     {
         id: 1,
         image: '/images/creator-star1.jpg',
+        tagline: 'The tall blonde your algorithm keeps showing you',
         name: "Sable Monroe",
         photos: 12,
         videos: 1
@@ -34,6 +35,7 @@ export const TEMP_CREATOR_DATA = [
     {
         id: 2,
         image: '/images/creator-star2.jpg',
+        tagline: 'The tall blonde your algorithm keeps showing you',
         name: "Roxie Sinclair",
         photos: 44,
         videos: 3
@@ -41,6 +43,7 @@ export const TEMP_CREATOR_DATA = [
     {
         id: 3,
         image: '/images/creator-star1.jpg',
+        tagline: 'The tall blonde your algorithm keeps showing you',
         name: "Sable Monroe",
         photos: 12,
         videos: 1
@@ -48,6 +51,7 @@ export const TEMP_CREATOR_DATA = [
     {
         id: 4,
         image: '/images/creator-star2.jpg',
+        tagline: 'The tall blonde your algorithm keeps showing you',
         name: "Roxie Sinclair",
         photos: 44,
         videos: 3
@@ -55,6 +59,7 @@ export const TEMP_CREATOR_DATA = [
     {
         id: 5,
         image: '/images/creator-star1.jpg',
+        tagline: 'The tall blonde your algorithm keeps showing you',
         name: "Sable Monroe",
         photos: 12,
         videos: 1
@@ -62,6 +67,7 @@ export const TEMP_CREATOR_DATA = [
     {
         id: 6,
         image: '/images/creator-star2.jpg',
+        tagline: 'The tall blonde your algorithm keeps showing you',
         name: "Roxie Sinclair",
         photos: 44,
         videos: 3
@@ -69,6 +75,7 @@ export const TEMP_CREATOR_DATA = [
     {
         id: 7,
         image: '/images/creator-star1.jpg',
+        tagline: 'The tall blonde your algorithm keeps showing you',
         name: "Sable Monroe",
         photos: 12,
         videos: 1
@@ -76,6 +83,7 @@ export const TEMP_CREATOR_DATA = [
     {
         id: 8,
         image: '/images/creator-star2.jpg',
+        tagline: 'The tall blonde your algorithm keeps showing you',
         name: "Roxie Sinclair",
         photos: 44,
         videos: 3
@@ -83,17 +91,11 @@ export const TEMP_CREATOR_DATA = [
     {
         id: 9,
         image: '/images/creator-star1.jpg',
+        tagline: 'The tall blonde your algorithm keeps showing you',
         name: "Sable Monroe",
         photos: 12,
         videos: 1
     },
-    {
-        id: 10,
-        image: '/images/creator-star2.jpg',
-        name: "Roxie Sinclair",
-        photos: 44,
-        videos: 3
-    }
 ]
 
 export const TEMP_CATEGORIES = [
@@ -267,49 +269,49 @@ export const TEMP_CREATOR_ORDER_CARD = [
         name: "Alina Monroe",
         likePercentage: 98,
         likes: 135,
-        picsCount: 10
+        categories: ["Curvy", "Nerdy", "Playful"],
     },
     {
         image: "/images/creator-star2.jpg",
         name: "Jade Monroe",
         likePercentage: 98,
         likes: 135,
-        picsCount: 10
+        categories: ["Curvy", "Nerdy", "Playful"],
     },
     {
         image: "/images/creator-star1.jpg",
         name: "Jade Monroe",
         likePercentage: 98,
         likes: 135,
-        picsCount: 10
+        categories: ["Curvy", "Nerdy", "Playful"],
     },
     {
         image: "/images/creator-star2.jpg",
         name: "Kajal Monroe",
         likePercentage: 98,
         likes: 135,
-        picsCount: 10
+        categories: ["Curvy", "Nerdy", "Playful"],
     },
     {
         image: "/images/creator-star1.jpg",
         name: "Jade Vixen",
         likePercentage: 98,
         likes: 135,
-        picsCount: 10
+        categories: ["Curvy", "Nerdy", "Playful"],
     },
     {
         image: "/images/creator-star2.jpg",
         name: "Jade Monroe",
         likePercentage: 98,
         likes: 135,
-        picsCount: 10
+        categories: ["Curvy", "Nerdy", "Playful"],
     },
     {
         image: "/images/creator-star1.jpg",
         name: "Alice Karen",
         likePercentage: 98,
         likes: 135,
-        picsCount: 10
+        categories: ["Curvy", "Nerdy", "Playful"],
     },
 ]
 

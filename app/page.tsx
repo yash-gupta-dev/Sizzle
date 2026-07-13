@@ -7,6 +7,8 @@ import { TEMP_CATEGORIES, TEMP_CREATOR_DATA, TEMP_CREATOR_ORDER_CARD, TEMP_CREAT
 import CreatorPostCard from "@/components/creator/CreatorPostCard";
 import CreatorCard from "@/components/creator/CreatorCard";
 import CreatorSuggestionSection from "@/components/creator/CreatorSuggestionSection";
+import CategoryChip from "@/components/cartegories/CategoryChip";
+import CreatorSmallCard from "@/components/creator/CreatorSmallCard";
 
 export default function Page() {
   return (
@@ -110,11 +112,39 @@ export default function Page() {
         {
           TEMP_CREATOR_ORDER_CARD.map((creator, i) => {
             return <CarouselItem className="md:basis-1/6 max-w-fit pl-0" key={creator.name + i}>
-              <CreatorCard {...creator} />
+              <CreatorCard {...creator} isSuggestion />
             </CarouselItem>
           })
         }
       </SliderHOC>
+
+      {/* MARK: Trending Categories */}
+      <SliderHOC title="Trending in #Gaming" contentClassName="gap-0">
+        {
+          TEMP_FEATURED_CREATORS.map((creator, i) => {
+            return <CarouselItem className="basis-1/4 w-78 p-0" key={creator.title + i}>
+              <CreatorPostCard {...creator} />
+            </CarouselItem>
+          })
+        }
+      </SliderHOC>
+
+      <SliderHOC title="More Creators Worth Knowing" supTitle="Explore by category" className="pl-7.5" contentClassName="gap-1.5">
+        {
+          [{ title: "All" }, ...TEMP_CATEGORIES].map(category => {
+            return <CarouselItem className="md:basis-1/6 max-w-fit p-0" key={category.title}>
+              <CategoryChip name={category.title} />
+            </CarouselItem>
+          })
+        }
+      </SliderHOC>
+
+      <div className="grid grid-cols-3 pl-7.5 mt-4.5">
+        {
+          TEMP_CREATOR_DATA.map(c => <CreatorSmallCard {...c} key={c.id} />)
+        }
+      </div>
+
     </div>
   )
 }
