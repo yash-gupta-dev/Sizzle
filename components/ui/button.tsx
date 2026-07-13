@@ -6,13 +6,13 @@ import { cn } from "@/lib/utils"
 import { Text } from "./text"
 
 const buttonVariants = cva(
-  "flex items-center justify-center p-[20px] gap-1.5 rounded-[14px] group/button cursor-pointer",
+  "flex items-center justify-center p-5 gap-1.5 rounded-[14px] group/button cursor-pointer",
   {
     variants: {
       variant: {
-        default: " bg-[var(--card)] text-[var(--card-foreground)] hover:bg-[var(--card-inactive-hover)] hover:text-foreground",
-        active: " bg-[var(--foreground)] text-black hover:bg-[var(--card-hover)]",
-        inactiveWithActiveText: " bg-[var(--card)] text-[var(--foreground)] hover:bg-[var(--card-inactive-hover)]",
+        default: "bg-(--gray-3) text-(--gray-8) hover:bg-card-muted-hover hover:text-foreground",
+        active: "bg-foreground text-black hover:bg-(--gray-9)",
+        inactiveWithActiveText: "bg-card text-foreground hover:bg-card-muted-hover",
       },
       size: {
         default:
@@ -29,13 +29,13 @@ const buttonVariants = cva(
       },
       bordered: {
         default: "border-0",
-        slim: "border border-[var(--gray-border)] hover:border-[var(--light-gray-border)]"
-      }
+        slim: "border border-border-muted hover:border-border-muted-hover"
+      },
     },
     defaultVariants: {
       variant: "default",
       size: "default",
-      bordered: "default"
+      bordered: "default",
     },
   }
 )
@@ -59,12 +59,14 @@ export interface ButtonProps
   endIcon?: ReactNode
 
   weight?: "normal" | "bold" | "medium" | "semibold" | null | undefined
+  fontSize?: "xs" | "sm" | "lg" | "base" | "md" | "xl" | "2xl" | "3xl" | "4xl" | null | undefined
 }
 
 function Button({
   className,
   variant,
   size,
+  fontSize,
   bordered,
   weight,
   icon,
@@ -88,7 +90,7 @@ function Button({
       {...props}
     >
       {icon && <span data-icon="inline-start">{icon}</span>}
-      {children && <Text weight={weight}>{children}</Text>}
+      {children && <Text size={fontSize} weight={weight}>{children}</Text>}
     </ButtonPrimitive>
   )
 }

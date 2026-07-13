@@ -10,11 +10,11 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "text-[var(--card-foreground)] hover:text-foreground",
-        active: "bg-(--bottom-tab-active) text-white hover:bg-(--bottom-tab-active)",
+        default: "text-card-foreground hover:text-foreground",
+        active: "bg-nav-bg-active/80 text-white",
       },
       size: {
-        default:"",
+        default: "",
         xs: "rounded-[min(var(--radius-md),10px)] px-2 text-xs in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
         sm: "rounded-[min(var(--radius-md),12px)] px-2.5 text-[0.8rem] in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
         lg: "px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
@@ -27,7 +27,7 @@ const buttonVariants = cva(
       },
       bordered: {
         default: "border-0",
-        slim: "border border-[var(--gray-border)] hover:border-[var(--light-gray-border)]"
+        slim: "border border-border-muted hover:border-border-muted-hover"
       }
     },
     defaultVariants: {

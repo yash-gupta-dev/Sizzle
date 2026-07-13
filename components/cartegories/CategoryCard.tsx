@@ -12,10 +12,9 @@ function CategoryCard({
 }: CategoryCardProps) {
 
   return (
-    <div className="flex overflow-hidden items-center gap-7.5 w-51 rounded-[15px] bg-(--hero-background-hover) cursor-pointer">
+    <div className="flex p-0 overflow-hidden items-center gap-7.5 w-51 rounded-[15px] bg-card-hover-bg cursor-pointer">
       <Text
-        size={"base"}
-        className="w-[50%] max-w-[50%] pl-7.5 py-9.5 whitespace-pre font-(--font-plak-condensed) tracking-normal leading-1 capitalize"
+        className="w-[50%] max-w-[50%] pl-7.5 py-9.5 whitespace-pre font-(--font-plak-condensed) tracking-normal leading-1 capitalize text-[20px]"
         weight={"extrabold"}
         style={{ fontFamily: 'plakCondensed', fontWeight: '700' }}
       >

@@ -22,8 +22,8 @@ function SliderHOC({
 
     return (
         <>
-            <div className="px-7.5 mt-14.25 mb-7.5">
-                {supTitle && <Text size={'sm'} weight={'normal'} className="mb-2 text-(--hero-director-text)">{supTitle}</Text>}
+            <div className="flex flex-col px-7.5 mt-14.25 mb-7.5 gap-2">
+                {supTitle && <Text size={'sm'} weight={'normal'} className="mb-2 text-card-hover">{supTitle}</Text>}
                 <div className="flex items-center gap-[8.75px]">
                     <Text className="leading-none" size={'md'}>{title}</Text>
                     <RightDirectionIcon className="h-2.5" />

@@ -2,6 +2,7 @@ import { ChatBubbleIcon, EyeIcon, HeartFilledIcon, LockFilledIcon, OptionsIcon, 
 import { Text } from "../ui/text"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import Image from "next/image";
+import { GradientText } from "../ui/gradientText";
 
 export interface CreatorCardPostProps {
   isNew: boolean;
@@ -14,6 +15,7 @@ export interface CreatorCardPostProps {
     likes: number;
     comments: number;
   };
+  rank?: number;
   uploaded: string;
   title: string;
   tags: string[];
@@ -32,28 +34,29 @@ function CreatorPostCard({
   tags,
   isLocked,
   isNew,
+  rank,
   stats
 }: CreatorCardPostProps) {
 
   return (
-    <div className="p-3 rounded-[15px] cursor-pointer hover:bg-(--hero-background-hover)">
+    <div className="p-3 rounded-[15px] cursor-pointer hover:bg-card-hover-bg">
       <div
-        className="rounded-[15px] min-h-110 bg-center bg-cover"
-        style={{ backgroundImage: `url(${cover})` }}
+        className="rounded-[15px] min-h-120 bg-center bg-cover"
+        style={{ backgroundImage: `url(${cover})`, aspectRatio: '1/1.5434083601' }}
       >
-        <div className="relative flex w-full min-h-110 pl-3.75 bg-[rgba(0,0,0,0.1)] group">
+        <div className="relative flex w-full h-full min-h-120 pl-3.75 bg-[rgba(0,0,0,0.1)] group">
           {/* Un-Hovered State */}
           <div className="absolute flex top-3.75 left-3.75 gap-1.25 group-hover:hidden">
             {
               isNew ? <div
-                className="py-1 px-2.25 bg-center bg-cover text-foreground text-xs rounded-[6px]"
+                className="py-1 px-2.25 bg-center bg-cover text-foreground text-xs align-middle rounded-[6px]"
                 style={{ backgroundImage: `url('/images/gradient-background.png')` }}
               >
-                <Text className="leading-4">New</Text>
+                <Text className="leading-4" size={'xs'}>New</Text>
               </div> : null
             }
             {
-              isLocked ? <div className="p-1.5 bg-(--lock-yellow-card) text-black rounded-[6px]">
+              isLocked ? <div className="p-1.5 bg-premium text-black rounded-[6px]">
                 <LockFilledIcon />
               </div> : null
             }
@@ -70,15 +73,15 @@ function CreatorPostCard({
             />
             <div className="flex gap-1.25 mb-3.75">
               {
-                duration ? <div className="flex h-fit bg-(--tag-background) py-0.5 px-2 gap-1 text-[12px] rounded-md">
-                  <Text>4K</Text>
-                  <Text>{duration}</Text>
+                duration ? <div className="flex h-fit bg-translucent-bg py-0.5 px-2 gap-1 text-[12px] rounded-[6px]">
+                  <Text size={'sm'}>4K</Text>
+                  <Text size={'sm'} weight={'normal'}>{duration}</Text>
                 </div> : null
               }
               {
                 tags.map(t => {
-                  return <div className="h-fit bg-(--tag-background) py-0.5 px-2 text-[12px] rounded-md" key={t}>
-                    <Text>#{t}</Text>
+                  return <div className="h-fit bg-translucent-bg py-0.5 px-2 text-[12px] rounded-[6px]" key={t}>
+                    <Text size={'sm'} weight={'normal'}>#{t}</Text>
                   </div>
                 })
               }
@@ -87,27 +90,27 @@ function CreatorPostCard({
           </div>
           {/* Hovered */}
           <div className="hidden justify-between absolute top-3.5 right-3.75 group-hover:flex">
-            <div className="h-fit bg-(--tag-background) py-0.5 px-2 text-[12px] rounded-md">
-              <Text>1/80</Text>
+            <div className="h-fit bg-translucent-bg py-0.5 px-2 text-[12px] rounded-[6px]">
+              <Text weight={'normal'} size={'xxs'}>1/80</Text>
             </div>
           </div>
 
-          <div className="hidden flex-col gap-1.5 justify-between items-center absolute bottom-5 right-3.75 group-hover:flex">
+          <div className="hidden flex-col gap-2.5 justify-between items-center absolute bottom-5 right-3.75 group-hover:flex">
             <div className="flex flex-col items-center gap-0.5">
               <HeartFilledIcon className="h-7 w-7" />
-              <Text className="text-[10px]">{stats.likes}</Text>
+              <Text size={'xxs'}>{stats.likes}</Text>
             </div>
             <div className="flex flex-col items-center gap-0.5">
               <ChatBubbleIcon className="h-7 w-7" />
-              <Text className="text-[10px]">{stats.likes}</Text>
+              <Text size={'xxs'}>{stats.likes}</Text>
             </div>
             <div className="flex flex-col items-center gap-0.5">
               <UsdCircleIcon className="h-7 w-7" />
-              <Text className="text-[10px]">{stats.likes}</Text>
+              <Text size={'xxs'}>{stats.likes}</Text>
             </div>
             <div className="flex flex-col items-center gap-0.5">
               <SaveBookmarkIcon className="h-7 w-7" />
-              <Text className="text-[10px]">{stats.likes}</Text>
+              <Text size={'xxs'}>{stats.likes}</Text>
             </div>
 
             <OptionsIcon className="w-4" />
@@ -119,20 +122,23 @@ function CreatorPostCard({
       </div>
 
       {/* Details */}
-      <div className="pt-3 text-[16px]">
-        <Text>{title}</Text>
-        <div className="flex items-center gap-2 text-(--hero-director-text)">
-          <div className="flex items-center gap-1">
-            <Avatar className="h-3.5 w-auto aspect-square rounded-[5px] [&::after]:border-0">
-              <AvatarImage className="w-full h-full object-cover rounded-sm" src={creator.image} />
-              <AvatarFallback>SZ</AvatarFallback>
-            </Avatar>
-            <Text>{creator.name}</Text>
-          </div>
+      <div className="flex items-center gap-3.75">
+        {rank && <GradientText>{rank}</GradientText>}
+        <div className="pt-3 text-[16px]">
+          <Text weight={'normal'}>{title}</Text>
+          <div className="flex items-center gap-2 text-text-secondary">
+            <div className="flex items-center gap-1">
+              <Avatar className="h-3.5 w-auto aspect-square rounded-[5px] [&::after]:border-0">
+                <AvatarImage className="w-full h-full object-cover rounded-sm" src={creator.image} />
+                <AvatarFallback>SZ</AvatarFallback>
+              </Avatar>
+              <Text size={'sm'} className="text-card-hover">{creator.name}</Text>
+            </div>
 
-          <div className="flex items-center gap-1">
-            <EyeIcon />
-            <Text weight={'normal'}>{stats.views} views • 2d</Text>
+            <div className="flex items-center gap-1">
+              <EyeIcon className="w-3 text-card-hover" />
+              <Text weight={'normal'} className="text-card-hover" size={'sm'}>{stats.views} views • 2d</Text>
+            </div>
           </div>
         </div>
       </div>

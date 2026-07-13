@@ -260,3 +260,55 @@ export const TEMP_FEATURED_CREATORS = [
         }
     },
 ]
+
+export const TEMP_CREATOR_ORDER_CARD = [
+    {
+        image: "/images/creator-star1.jpg",
+        name: "Alina Monroe",
+        likePercentage: 98,
+        likes: 135,
+        picsCount: 10
+    },
+    {
+        image: "/images/creator-star2.jpg",
+        name: "Jade Monroe",
+        likePercentage: 98,
+        likes: 135,
+        picsCount: 10
+    },
+    {
+        image: "/images/creator-star1.jpg",
+        name: "Jade Monroe",
+        likePercentage: 98,
+        likes: 135,
+        picsCount: 10
+    },
+    {
+        image: "/images/creator-star2.jpg",
+        name: "Kajal Monroe",
+        likePercentage: 98,
+        likes: 135,
+        picsCount: 10
+    },
+    {
+        image: "/images/creator-star1.jpg",
+        name: "Jade Vixen",
+        likePercentage: 98,
+        likes: 135,
+        picsCount: 10
+    },
+    {
+        image: "/images/creator-star2.jpg",
+        name: "Jade Monroe",
+        likePercentage: 98,
+        likes: 135,
+        picsCount: 10
+    },
+    {
+        image: "/images/creator-star1.jpg",
+        name: "Alice Karen",
+        likePercentage: 98,
+        likes: 135,
+        picsCount: 10
+    },
+]

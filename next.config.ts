@@ -2,28 +2,57 @@
 const nextConfig = {
   turbopack: {
     rules: {
-      "*.svg": {
-        loaders: [
-          {
-            loader: "@svgr/webpack",
-            options: {
-              icon: true,
-              svgoConfig: {
-                plugins: [
-                  {
-                    name: "preset-default",
-                    params: {
-                      overrides: { removeViewBox: false },
+      "*.svg": [
+        {
+          condition: {
+            not: { path: /gradient\.svg$/ },
+          },
+          loaders: [
+            {
+              loader: "@svgr/webpack",
+              options: {
+                icon: true,
+                svgoConfig: {
+                  plugins: [
+                    {
+                      name: "preset-default",
+                      params: {
+                        overrides: { removeViewBox: false },
+                      },
                     },
-                  },
-                  { name: "convertColors", params: { currentColor: true } },
-                ],
+                    { name: "convertColors", params: { currentColor: true } },
+                  ],
+                },
               },
             },
+          ],
+          as: "*.js",
+        },
+        {
+          condition: {
+            path: /gradient\.svg$/,
           },
-        ],
-        as: "*.js",
-      },
+          loaders: [
+            {
+              loader: "@svgr/webpack",
+              options: {
+                icon: true,
+                svgoConfig: {
+                  plugins: [
+                    {
+                      name: "preset-default",
+                      params: {
+                        overrides: { removeViewBox: false },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          ],
+          as: "*.js",
+        },
+      ],
     },
   },
 };

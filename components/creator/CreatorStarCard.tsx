@@ -27,12 +27,12 @@ function CreatorStarCard({
       <Text>{name}</Text>
 
       <div className="flex gap-3">
-        <div className="flex gap-1.5 items-center text-(--hero-director-text)">
-          <GalleryIcon className="w-3"/>
+        <div className="flex gap-1.5 items-center text-card-hover">
+          <GalleryIcon className="w-3" />
           <Text size={'sm'} weight={'normal'}>{photos}</Text>
         </div>
-        <div className="flex gap-1.5 items-center text-(--hero-director-text)">
-          <PlaylistIcon className="w-3"/>
+        <div className="flex gap-1.5 items-center text-card-hover">
+          <PlaylistIcon className="w-3" />
           <Text size={'sm'} weight={'normal'}>{videos}</Text>
         </div>
       </div>

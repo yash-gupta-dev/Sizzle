@@ -6,14 +6,14 @@ export default function Navbar() {
     const TEMP_USER_IMAGE = "https://plus.unsplash.com/premium_photo-1681506669115-cb6b2d30dbc7?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 
     return (
-        <header className="py-6 px-7.5">
+        <header className="p-7.5">
             <div className="content-container flex w-full items-center">
                 <nav className="flex w-full items-center justify-between">
                     {/* Left Nav */}
                     <div className="flex flex-1 gap-2">
-                        <Button icon={<MultipleStarsIcon className="w-4 h-4" />} variant={"active"}>For You</Button>
-                        <Button icon={<UserStarsIcon className="w-4 h-4" />}>Following</Button>
-                        <Button icon={<CrownRewardIcon className="w-4 h-4" />}>Memberships</Button>
+                        <Button icon={<MultipleStarsIcon className="w-4 h-4" />} variant={"active"} fontSize={'sm'}>For You</Button>
+                        <Button icon={<UserStarsIcon className="w-4 h-4" />} fontSize={'sm'}>Following</Button>
+                        <Button icon={<CrownRewardIcon className="w-4 h-4" />} fontSize={'sm'}>Memberships</Button>
                     </div>
 
                     {/* Center Logo */}
@@ -50,8 +50,10 @@ export default function Navbar() {
                             1280.55
                         </Button>
 
-                        <Avatar className="h-10 w-auto aspect-square rounded-sm [&::after]:border-0">
-                            <AvatarImage className="w-full h-full object-cover rounded-sm" src={TEMP_USER_IMAGE} />
+                        {/* @ts-ignore */}
+                        <Avatar style={{ cornerShape: 'squircle' }} className="h-10 w-auto aspect-square rounded-4xl [&::after]:border-0">
+                            {/* @ts-ignore */}
+                            <AvatarImage style={{ cornerShape: 'squircle' }} className="w-full h-full object-cover rounded-4xl" src={TEMP_USER_IMAGE} />
                             <AvatarFallback>SZ</AvatarFallback>
                         </Avatar>
                     </div>
