@@ -25,7 +25,7 @@ function SliderHOC({
 
     return (
         <>
-            <div className="flex items-center gap-3.75 mt-14.25 px-7.5  mb-7.5">
+            {leftImage || title && <div className="flex items-center gap-3.75 mt-14.25 px-7.5 mb-7.5">
                 {/* @ts-ignore */}
                 {leftImage && <Avatar style={{ cornerShape: 'squircle' }} className="h-12.5 w-auto aspect-square rounded-4xl [&::after]:border-0">
                     {/* @ts-ignore */}
@@ -38,7 +38,7 @@ function SliderHOC({
                         <RightDirectionIcon className="h-2.5" />
                     </div>
                 </div>}
-            </div>
+            </div>}
 
             <Carousel className={cn("w-full", className)} opts={{
                 align: "center",   // centers the active pair -> equal peek on both sides

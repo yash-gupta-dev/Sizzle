@@ -28,6 +28,7 @@ export const TEMP_CREATOR_DATA = [
         id: 1,
         image: '/images/creator-star1.jpg',
         tagline: 'The tall blonde your algorithm keeps showing you',
+        categories: ["Curvy", "Nerdy", "Playful"],
         name: "Sable Monroe",
         photos: 12,
         videos: 1
@@ -36,6 +37,7 @@ export const TEMP_CREATOR_DATA = [
         id: 2,
         image: '/images/creator-star2.jpg',
         tagline: 'The tall blonde your algorithm keeps showing you',
+        categories: ["Curvy", "Nerdy", "Playful"],
         name: "Roxie Sinclair",
         photos: 44,
         videos: 3
@@ -44,6 +46,7 @@ export const TEMP_CREATOR_DATA = [
         id: 3,
         image: '/images/creator-star1.jpg',
         tagline: 'The tall blonde your algorithm keeps showing you',
+        categories: ["Curvy", "Nerdy", "Playful"],
         name: "Sable Monroe",
         photos: 12,
         videos: 1
@@ -52,6 +55,7 @@ export const TEMP_CREATOR_DATA = [
         id: 4,
         image: '/images/creator-star2.jpg',
         tagline: 'The tall blonde your algorithm keeps showing you',
+        categories: ["Curvy", "Nerdy", "Playful"],
         name: "Roxie Sinclair",
         photos: 44,
         videos: 3
@@ -60,6 +64,7 @@ export const TEMP_CREATOR_DATA = [
         id: 5,
         image: '/images/creator-star1.jpg',
         tagline: 'The tall blonde your algorithm keeps showing you',
+        categories: ["Curvy", "Nerdy", "Playful"],
         name: "Sable Monroe",
         photos: 12,
         videos: 1
@@ -68,6 +73,7 @@ export const TEMP_CREATOR_DATA = [
         id: 6,
         image: '/images/creator-star2.jpg',
         tagline: 'The tall blonde your algorithm keeps showing you',
+        categories: ["Curvy", "Nerdy", "Playful"],
         name: "Roxie Sinclair",
         photos: 44,
         videos: 3
@@ -76,6 +82,7 @@ export const TEMP_CREATOR_DATA = [
         id: 7,
         image: '/images/creator-star1.jpg',
         tagline: 'The tall blonde your algorithm keeps showing you',
+        categories: ["Curvy", "Nerdy", "Playful"],
         name: "Sable Monroe",
         photos: 12,
         videos: 1
@@ -84,6 +91,7 @@ export const TEMP_CREATOR_DATA = [
         id: 8,
         image: '/images/creator-star2.jpg',
         tagline: 'The tall blonde your algorithm keeps showing you',
+        categories: ["Curvy", "Nerdy", "Playful"],
         name: "Roxie Sinclair",
         photos: 44,
         videos: 3
@@ -92,6 +100,7 @@ export const TEMP_CREATOR_DATA = [
         id: 9,
         image: '/images/creator-star1.jpg',
         tagline: 'The tall blonde your algorithm keeps showing you',
+        categories: ["Curvy", "Nerdy", "Playful"],
         name: "Sable Monroe",
         photos: 12,
         videos: 1

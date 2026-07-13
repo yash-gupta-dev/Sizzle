@@ -9,6 +9,7 @@ import CreatorCard from "@/components/creator/CreatorCard";
 import CreatorSuggestionSection from "@/components/creator/CreatorSuggestionSection";
 import CategoryChip from "@/components/cartegories/CategoryChip";
 import CreatorSmallCard from "@/components/creator/CreatorSmallCard";
+import HottestCreatorCard from "@/components/creator/HottestCreatorCard";
 
 export default function Page() {
   return (
@@ -144,6 +145,35 @@ export default function Page() {
           TEMP_CREATOR_DATA.map(c => <CreatorSmallCard {...c} key={c.id} />)
         }
       </div>
+
+      <SliderHOC title="Top 10 Creators This Week" supTitle="The hottest right now" className="pl-7.5" contentClassName="gap-30 pl-23.5">
+        {
+          TEMP_CREATOR_DATA.map((c, i) => <HottestCreatorCard {...c} key={c.id} rank={i + 1} />)
+
+        }
+      </SliderHOC>
+
+      <SliderHOC title="Standout content this week" supTitle="Sizzle+ Certified" contentClassName="gap-0">
+        {
+          TEMP_FEATURED_CREATORS.map((creator, i) => {
+            return <CarouselItem className="basis-1/4 w-78 p-0" key={creator.title + i}>
+              <CreatorPostCard {...creator} />
+            </CarouselItem>
+          })
+        }
+      </SliderHOC>
+
+      <SliderHOC title="Featured creators this week" contentClassName="gap-7.5 pl-7.5" >
+        {
+          TEMP_CREATOR_ORDER_CARD.map((creator, i) => {
+            return <CarouselItem className="md:basis-1/6 max-w-fit pl-0" key={creator.name + i}>
+              <CreatorCard {...creator} isSuggestion />
+            </CarouselItem>
+          })
+        }
+      </SliderHOC>
+
+      <CreatorSuggestionSection {...TEMP_CREATOR_SUGGESTION_CARD} />
 
     </div>
   )

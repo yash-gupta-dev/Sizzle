@@ -9,7 +9,7 @@ const GradientText = ({
         WebkitBackgroundClip: "text",
         color: "transparent",
         WebkitTextFillColor: "transparent",
-        fontSize: "60px",
+        fontSize: `${rest.size || 60}px`,
         fontFamily: 'var(--font-plak-condensed)',
         fontWeight: '900'
     }}

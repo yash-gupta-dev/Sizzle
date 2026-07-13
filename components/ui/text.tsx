@@ -17,6 +17,7 @@ const textVariants = cva("text-inherit leading-0", {
       "3xl": "text-[60px]",
       "4xl": "text-[72px]",
       "5xl": "text-[120px]",
+      "6xl": "text-[300px]",
     },
     weight: {
       light: "font-light",
@@ -46,6 +47,7 @@ const defaultElementMap = {
   "3xl": "h1",
   "4xl": "h1",
   "5xl": "h1",
+  "6xl": "h1",
 } as const
 
 type TextElement = keyof JSX.IntrinsicElements
