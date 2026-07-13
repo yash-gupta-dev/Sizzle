@@ -19,6 +19,8 @@ export interface CreatorCardPostProps {
   uploaded: string;
   title: string;
   tags: string[];
+  minHeight?: number;
+  isFromProfile?: boolean;
   creator: {
     image: string;
     name: string;
@@ -35,16 +37,18 @@ function CreatorPostCard({
   isLocked,
   isNew,
   rank,
+  minHeight = 120,
+  isFromProfile = false,
   stats
 }: CreatorCardPostProps) {
 
   return (
     <div className="p-3 rounded-[15px] cursor-pointer hover:bg-card-hover-bg">
       <div
-        className="rounded-[15px] min-h-120 bg-center bg-cover"
+        className={`rounded-[15px] min-h-${minHeight} bg-center bg-cover`}
         style={{ backgroundImage: `url(${cover})`, aspectRatio: '1/1.5434083601' }}
       >
-        <div className="relative flex w-full h-full min-h-120 pl-3.75 bg-[rgba(0,0,0,0.1)] group">
+        <div className={`relative flex w-full h-full min-h-${minHeight} pl-3.75 bg-[rgba(0,0,0,0.1)] group`}>
           {/* Un-Hovered State */}
           <div className="absolute flex top-3.75 left-3.75 gap-1.25 group-hover:hidden">
             {
@@ -132,11 +136,11 @@ function CreatorPostCard({
                 <AvatarImage className="w-full h-full object-cover rounded-sm" src={creator.image} />
                 <AvatarFallback>SZ</AvatarFallback>
               </Avatar>
-              <Text size={'sm'} className="text-card-hover">{creator.name}</Text>
+              {!isFromProfile ? <Text size={'sm'} className="text-card-hover">{creator.name}</Text> : null}
             </div>
 
             <div className="flex items-center gap-1">
-              <EyeIcon className="w-3 text-card-hover" />
+              {!isFromProfile ? <EyeIcon className="w-3 text-card-hover" /> : null}
               <Text weight={'normal'} className="text-card-hover" size={'sm'}>{stats.views} views • 2d</Text>
             </div>
           </div>

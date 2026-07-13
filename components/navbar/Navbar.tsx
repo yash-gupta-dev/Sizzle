@@ -1,10 +1,9 @@
 import { AddIcon, BellNotificationIcon, ChatBubbleIcon, CrownRewardIcon, MultipleStarsIcon, SizzleLogo, UsdCircleIcon, UserStarsIcon } from "@/assets/icons"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
+import { TEMP_USER_IMAGE } from "@/data/demo.data"
 
 export default function Navbar() {
-    const TEMP_USER_IMAGE = "https://plus.unsplash.com/premium_photo-1681506669115-cb6b2d30dbc7?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-
     return (
         <header className="p-7.5">
             <div className="content-container flex w-full items-center">
