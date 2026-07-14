@@ -204,6 +204,37 @@ export default function Page() {
         }
       </SliderHOC>
 
+      <SliderHOC title="Be the first to discover them" supTitle="The latest creators" contentClassName="gap-7.5 pl-7.5" >
+        {
+          TEMP_CREATOR_ORDER_CARD.map((creator, i) => {
+            return <CarouselItem className="md:basis-1/6 max-w-fit pl-0" key={creator.name + i}>
+              <CreatorCard {...creator} isSuggestion />
+            </CarouselItem>
+          })
+        }
+      </SliderHOC>
+
+      <SliderHOC title="More from #Lifestyle" supTitle="You know what you like" contentClassName="gap-0 pl-7.5">
+        {
+          TEMP_FEATURED_CREATORS.map((creator, i) => {
+            return <CarouselItem className="basis-1/4 w-78 p-0" key={creator.title + i}>
+              <CreatorPostCard {...creator} />
+            </CarouselItem>
+          })
+        }
+      </SliderHOC>
+
+      <SliderHOC title="Creators who earned the spotlight" supTitle="Sizzle+ Certified" className="pl-7.5" contentClassName="gap-6">
+        {
+          TEMP_CREATOR_DATA.map((c, i) => <EveryonesBookingCreatorCard {...c} key={c.id}/>)
+        }
+      </SliderHOC>
+
+      <SliderHOC title="Creator highlights" className="pl-7.5" contentClassName="gap-5">
+        {
+          TEMP_CREATOR_DATA.map((c, i) => <EveryonesBookingCreatorCard {...c} key={c.id}/>)
+        }
+      </SliderHOC>
     </div>
   )
 }

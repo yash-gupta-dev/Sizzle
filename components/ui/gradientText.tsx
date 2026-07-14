@@ -4,7 +4,7 @@ const GradientText = ({
     ...rest
 }: TextProps) => {
     return <Text {...rest} style={{
-        backgroundImage: "linear-gradient(to bottom, #FFFFFF, #FFFFFF00)",
+        backgroundImage: "linear-gradient(to bottom, #FFFFFF00 35%, #FFFFFF)",
         backgroundClip: "text",
         WebkitBackgroundClip: "text",
         color: "transparent",

@@ -3,7 +3,7 @@ import { GradientText } from "../ui/gradientText";
 import { Text } from "../ui/text";
 
 export interface HottestCreatorCardProps {
-    rank: number;
+    rank?: number;
     name: string;
     image: string;
     primaryColor?: string;
@@ -17,18 +17,23 @@ function EveryonesBookingCreatorCard({
     primaryColor,
     categories
 }: HottestCreatorCardProps) {
-
+    console.log(`border-[${primaryColor}]`)
     return (
         <div className="relative bg-center bg-cover">
             <div className="absolute left-[-35%] z-10">
                 <GradientText size={'6xl'}>{rank}</GradientText>
             </div>
             <div
-                className="relative flex items-end rounded-[15px] h-100 w-65 bg-center bg-cover z-20"
+                className={`relative flex items-end rounded-[15px] h-100 w-${rank ? "65" : "77.75"} bg-center bg-cover z-20`}
                 style={{ backgroundImage: `url(${image})` }}
             >
 
-                <div className="relative pl-5 pb-5 w-full rounded-b-[15px]"
+                {!rank && <div
+                    className={`absolute top-3.75 bottom-3.75 left-3.75 right-3.75 rounded-[10px] border-2 z-20`}
+                    style={{ borderColor: primaryColor }}
+                />}
+
+                <div className={`relative pl-${rank ? '5' : '7.5'} pb-${rank ? '5' : '7.5'} w-full rounded-b-[15px]`}
                     style={{
                         backgroundImage: `linear-gradient(to bottom, #00000000 0%, ${primaryColor} 90%, ${primaryColor})`
                     }}
@@ -40,7 +45,7 @@ function EveryonesBookingCreatorCard({
                             WebkitMaskImage: "linear-gradient(to bottom, transparent 10%, black 100%)",
                         }}
                     />
-                    <div className="relative flex items-center w-fit bg-translucent-bg py-1.75 px-2.5 gap-1.25 text-[10px] rounded-[6px] z-20">
+                    <div className="relative flex items-center w-fit bg-translucent-bg py-1.5 px-2.5 gap-1.25 text-[10px] rounded-[6px] z-20">
                         {
                             <LeaderBoardGradientIcon />
                         }
