@@ -1,10 +1,16 @@
 import { Text, TextProps } from "./text"
 
+interface GradientTextProps extends TextProps {
+    gradient?: string;
+}
+
 const GradientText = ({
+    gradient = "linear-gradient(to bottom, #FFFFFF, #FFFFFF00)",
     ...rest
-}: TextProps) => {
+}: GradientTextProps) => {
     return <Text {...rest} style={{
-        backgroundImage: "linear-gradient(to bottom, #FFFFFF00 35%, #FFFFFF)",
+        ...rest.style,
+        backgroundImage: gradient,
         backgroundClip: "text",
         WebkitBackgroundClip: "text",
         color: "transparent",

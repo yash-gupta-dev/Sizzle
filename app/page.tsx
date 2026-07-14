@@ -12,6 +12,7 @@ import CreatorSmallCard from "@/components/creator/CreatorSmallCard";
 import HottestCreatorCard from "@/components/creator/HottestCreatorCard";
 import EveryonesBookingCreatorCard from "@/components/creator/EveryonesBookingCreatorCard";
 import ReviewCard from "@/components/reviews/ReviewCard";
+import CreatorSuggestionCard from "@/components/creator/CreatorSuggestionCard";
 
 export default function Page() {
   return (
@@ -230,9 +231,13 @@ export default function Page() {
         }
       </SliderHOC>
 
-      <SliderHOC title="Creator highlights" className="pl-7.5" contentClassName="gap-5">
+      <SliderHOC title="Creator highlights" contentClassName="gap-5 pl-7.5">
         {
-          TEMP_CREATOR_DATA.map((c, i) => <EveryonesBookingCreatorCard {...c} key={c.id}/>)
+          TEMP_CREATOR_DATA.map((creator, i) => {
+            return <CarouselItem className="basis-2/7 max-w-fit p-0" key={creator.name + i}>
+              <CreatorSuggestionCard {...creator} />
+            </CarouselItem>
+          })
         }
       </SliderHOC>
     </div>
