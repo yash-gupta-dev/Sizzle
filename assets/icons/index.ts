@@ -19,6 +19,7 @@ export { default as LeaderBoardGradientIcon } from "@/assets/icons/leaderboard-g
 export { default as SaveFilledIcon } from "@/assets/icons/save-filled.svg";
 export { default as EyeIcon } from "@/assets/icons/eye.svg";
 export { default as RightDirectionIcon } from "@/assets/icons/right-direction.svg";
+export { default as LeftDirectionIcon } from "@/assets/icons/left-direction.svg";
 export { default as PlaylistIcon } from "@/assets/icons/play-list.svg";
 export { default as GalleryIcon } from "@/assets/icons/gallery.svg";
 export { default as LockFilledIcon } from "@/assets/icons/lock-filled.svg";
