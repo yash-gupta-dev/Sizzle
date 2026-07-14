@@ -17,14 +17,15 @@ function EveryonesBookingCreatorCard({
     primaryColor,
     categories
 }: HottestCreatorCardProps) {
-    console.log(`border-[${primaryColor}]`)
+
     return (
         <div className="relative bg-center bg-cover">
             <div className="absolute left-[-35%] z-10">
-                <GradientText size={'6xl'}>{rank}</GradientText>
+                <GradientText size={'6xl'} gradient="linear-gradient(to bottom, #FFFFFF10 40%, #FFFFFF90)"
+>{rank}</GradientText>
             </div>
             <div
-                className={`relative flex items-end rounded-[15px] h-100 w-${rank ? "65" : "77.75"} bg-center bg-cover z-20`}
+                className={`relative flex items-end rounded-[15px] h-100 min-w-${rank ? "65" : "77.75"} w-${rank ? "65" : "77.75"} bg-center bg-cover z-20`}
                 style={{ backgroundImage: `url(${image})` }}
             >
 

@@ -57,7 +57,7 @@ function CreatorSuggestionCard({
       <div className="flex gap-2.5">
         {
           featuredImages.map((image, index) => {
-            return <div className="relative">
+            return <div className="relative" key={image + index}>
               <GradientText
                 className="absolute top-0 left-3 z-20"
                 gradient="linear-gradient(to bottom, #FFFFFF, #FFFFFF50)"

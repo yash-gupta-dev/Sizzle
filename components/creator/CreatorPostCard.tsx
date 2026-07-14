@@ -127,7 +127,7 @@ function CreatorPostCard({
 
       {/* Details */}
       <div className="flex items-center gap-3.75">
-        {rank && <GradientText>{rank}</GradientText>}
+        {rank && <GradientText gradient="linear-gradient(to bottom, #FFFFFF, #FFFFFF10)">{rank}</GradientText>}
         <div className="pt-3 text-[16px]">
           <Text weight={'normal'}>{title}</Text>
           <div className="flex items-center gap-2 text-text-secondary">

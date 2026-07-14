@@ -19,7 +19,7 @@ function HottestCreatorCard({
     return (
         <div className="relative bg-center bg-cover">
             <div className="absolute left-[-35%] z-10">
-                <GradientText size={'6xl'}>{rank}</GradientText>
+                <GradientText size={'6xl'} gradient="linear-gradient(to bottom, #FFFFFF 5%, #FFFFFF25 75%)">{rank}</GradientText>
             </div>
             <div
                 className="relative flex items-end rounded-[15px] h-100 w-65 bg-center bg-cover z-20"

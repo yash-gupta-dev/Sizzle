@@ -61,7 +61,7 @@ function ReviewCard({
 
         {
           tags.map(tag => {
-            return <div className="py-1 px-3 bg-card-muted-hover rounded-[12px]">
+            return <div className="py-1 px-3 bg-card-muted-hover rounded-[12px]" key={tag}>
               <Text size={'xs'} className="leading-5.5 align-bottom">{tag}</Text>
             </div>
           })
