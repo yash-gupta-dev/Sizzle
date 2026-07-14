@@ -1,7 +1,8 @@
+"use client"
 import { StarHollowIcon } from "@/assets/icons";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import { Text } from "../ui/text"
-import Image from "next/image";
+import { motion } from "motion/react";
 
 export interface CategoryCardProps {
   name: string;
@@ -26,7 +27,11 @@ function ReviewCard({
 }: CategoryCardProps) {
 
   return (
-    <div className="p-5 overflow-hidden rounded-[15px] bg-card-hover-bg cursor-pointer">
+    <motion.div 
+    whileHover={{
+      backgroundColor: 'var(--card-muted-hover)'
+    }}
+    className="p-5 overflow-hidden rounded-[15px] bg-card-hover-bg cursor-pointer">
       <div className="flex gap-3.75 mb-5">
         {/* @ts-ignore */}
         <Avatar style={{ cornerShape: 'squircle' }} className="h-12.5 w-auto aspect-square rounded-4xl [&::after]:border-0">
@@ -68,7 +73,7 @@ function ReviewCard({
         }
 
       </div>
-    </div >
+    </motion.div >
   )
 }
 

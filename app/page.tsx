@@ -47,7 +47,7 @@ export default function Page() {
       <SliderHOC title="Fresh from your creators" className="pl-7.5">
         {
           TEMP_CREATOR_DATA.map(creator => {
-            return <CarouselItem className="md:basis-1/6 max-w-fit p-0" key={creator.id}>
+            return <CarouselItem className="max-w-fit p-0" key={creator.id}>
               <CreatorStarCard name={creator.name} image={creator.image} photos={creator.photos} videos={creator.videos} />
             </CarouselItem>
           })
@@ -143,7 +143,7 @@ export default function Page() {
         }
       </SliderHOC>
 
-      <div className="grid grid-cols-3 pl-7.5 mt-4.5">
+      <div className="grid grid-cols-3 px-7.5 mt-4.5">
         {
           TEMP_CREATOR_DATA.map(c => <CreatorSmallCard {...c} key={c.id} />)
         }
@@ -227,7 +227,9 @@ export default function Page() {
 
       <SliderHOC title="Creators who earned the spotlight" supTitle="Sizzle+ Certified" className="pl-7.5" contentClassName="gap-6">
         {
-          TEMP_CREATOR_DATA.map((c, i) => <EveryonesBookingCreatorCard {...c} key={c.id}/>)
+          TEMP_CREATOR_DATA.map(c => <CarouselItem className="max-w-fit p-0" key={c.id}>
+            <EveryonesBookingCreatorCard {...c} key={c.id} />
+          </CarouselItem>)
         }
       </SliderHOC>
 

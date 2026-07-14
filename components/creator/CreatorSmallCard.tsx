@@ -1,5 +1,8 @@
+"use client"
+
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Text } from "../ui/text";
+import { motion } from "motion/react";
 
 export interface CreatorCardProps {
   name: string;
@@ -14,7 +17,11 @@ function CreatorSmallCard({
 }: CreatorCardProps) {
 
   return (
-    <div className="flex p-3 gap-3.75">
+    <motion.div
+    whileHover={{
+      backgroundColor: 'var(--card-hover-bg)'
+    }}
+    className="flex p-3 gap-3.75 rounded-[15px] cursor-pointer">
       {/* @ts-ignore */}
       <Avatar style={{ cornerShape: 'squircle' }} className="h-15 w-auto aspect-square rounded-4xl [&::after]:border-0">
         {/* @ts-ignore */}
@@ -25,7 +32,7 @@ function CreatorSmallCard({
         <Text weight={'normal'}>{name}</Text>
         <Text className="text-card-hover" weight={'normal'}>{tagline}</Text>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

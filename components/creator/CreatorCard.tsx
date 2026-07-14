@@ -1,7 +1,8 @@
-import { AddIcon, ChatBubbleIcon, EyeIcon, FlashFilledIcon, HeartFilledIcon, LikeFilledIcon, LockFilledIcon, OptionsIcon, SaveBookmarkIcon, UsdCircleIcon } from "@/assets/icons";
+"use client"
+
+import { AddIcon, FlashFilledIcon, LikeFilledIcon } from "@/assets/icons";
 import { Text } from "../ui/text"
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import Image from "next/image";
+import { motion } from "motion/react";
 import { Button } from "../ui/button";
 
 export interface CreatorCardProps {
@@ -23,8 +24,10 @@ function CreatorCard({
 }: CreatorCardProps) {
 
   return (
-    <div>
-      <div
+    <div className="cursor-pointer">
+      <motion.div
+        initial={{}}
+        whileHover={{ scale: 1.05 }}
         className="w-50 h-50 mb-3 overflow-hidden bg-center bg-cover rounded-full"
         // @ts-ignore: Corner shape casuses issues
         style={{ cornerShape: 'squircle', backgroundImage: `url(${image})` }}

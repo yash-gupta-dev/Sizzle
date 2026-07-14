@@ -19,11 +19,11 @@ function EveryonesBookingCreatorCard({
 }: HottestCreatorCardProps) {
 
     return (
-        <div className="relative bg-center bg-cover">
-            <div className="absolute left-[-35%] z-10">
+        <div className={`relative bg-center bg-cover ${!rank ? 'min-w-77.75 min-h-100' : ''}`}>
+            {rank ? <div className="absolute left-[-35%] z-10">
                 <GradientText size={'6xl'} gradient="linear-gradient(to bottom, #FFFFFF10 40%, #FFFFFF90)"
->{rank}</GradientText>
-            </div>
+                >{rank}</GradientText>
+            </div> : null}
             <div
                 className={`relative flex items-end rounded-[15px] h-100 min-w-${rank ? "65" : "77.75"} w-${rank ? "65" : "77.75"} bg-center bg-cover z-20`}
                 style={{ backgroundImage: `url(${image})` }}
@@ -34,7 +34,7 @@ function EveryonesBookingCreatorCard({
                     style={{ borderColor: primaryColor }}
                 />}
 
-                <div className={`relative pl-${rank ? '5' : '7.5'} pb-${rank ? '5' : '7.5'} w-full rounded-b-[15px]`}
+                <div className={`relative pl-${rank ? '5' : '7.5'} ${rank ? 'pb-5' : 'pb-7.5'}  w-full rounded-b-[15px]`}
                     style={{
                         backgroundImage: `linear-gradient(to bottom, #00000000 0%, ${primaryColor} 90%, ${primaryColor})`
                     }}

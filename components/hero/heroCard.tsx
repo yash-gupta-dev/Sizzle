@@ -1,4 +1,7 @@
+"use client"
+
 import Image from "next/image";
+import { motion } from "motion/react";
 import { Text } from "../ui/text";
 import { EyeIcon, LeaderBoardGradientIcon, SizzleLogo } from "@/assets/icons";
 
@@ -29,10 +32,15 @@ export default function HeroCard({
     description
 }: HeroCardProps) {
     return (
-        <div className="p-3 rounded-[15px] hover:bg-card-hover-bg cursor-pointer">
+        <motion.div
+            initial={false}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            whileHover={{ backgroundColor: 'var(--gray-3)' }}
+            className="p-3 rounded-[15px] cursor-pointer"
+        >
             {/* MARK: Hero Image */}
             <div
-                className="group h-120 relative rounded-[15px] p-4 hover:bg-card-hover-bg bg-cover text-foreground"
+                className="group h-120 relative rounded-[15px] p-4 bg-cover text-foreground"
                 style={{ backgroundImage: `url(${image})` }}
             >
                 <div className="absolute p-5 top-0 bottom-0 left-0 right-0 bg-[rgba(0,0,0,0.5)] rounded-[15px]">
@@ -96,11 +104,11 @@ export default function HeroCard({
                 <div className="flex items-center gap-2 text-card-hover">
                     <Text>{director}</Text>
                     <div className="flex items-center gap-1">
-                        <EyeIcon className="w-3"/>
+                        <EyeIcon className="w-3" />
                         <Text weight={'normal'}>{views} views • 2d</Text>
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }

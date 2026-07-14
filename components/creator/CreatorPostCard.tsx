@@ -1,7 +1,10 @@
+"use client"
+
 import { ChatBubbleIcon, EyeIcon, HeartFilledIcon, LockFilledIcon, OptionsIcon, SaveBookmarkIcon, UsdCircleIcon } from "@/assets/icons";
 import { Text } from "../ui/text"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import Image from "next/image";
+import { motion } from "motion/react";
 import { GradientText } from "../ui/gradientText";
 
 export interface CreatorCardPostProps {
@@ -42,15 +45,45 @@ function CreatorPostCard({
   stats
 }: CreatorCardPostProps) {
 
+  const parentVariants = {
+    initial: {},
+    hover: {
+      backgroundColor: 'var(--card-muted-hover)'
+    },
+  };
+
+const tagsVariants = {
+  initial: { opacity: 1 },
+  hover: { opacity: 0 },
+};
+
+const buttonsVariants = {
+  initial: { opacity: 0 },
+  hover: { opacity: 1 },
+};
+
+const imageVariants = {
+  initial: { opacity: 0.9 },
+  hover: { opacity: 1 },
+};
+
   return (
-    <div className="p-3 rounded-[15px] cursor-pointer hover:bg-card-hover-bg">
-      <div
+    <motion.div
+      variants={parentVariants}
+      initial={'initial'}
+      transition={{ duration: 0.2, ease: "easeInOut" }}
+      whileHover={'hover'}
+      className="p-3 rounded-[15px] cursor-pointer h-full flex flex-col">
+      <motion.div
+      variants={imageVariants}
         className={`rounded-[15px] min-h-${minHeight} bg-center bg-cover`}
         style={{ backgroundImage: `url(${cover})`, aspectRatio: '1/1.5434083601' }}
       >
         <div className={`relative flex w-full h-full min-h-${minHeight} pl-3.75 bg-[rgba(0,0,0,0.1)] group`}>
           {/* Un-Hovered State */}
-          <div className="absolute flex top-3.75 left-3.75 gap-1.25 group-hover:hidden">
+          <motion.div
+            variants={tagsVariants}
+            className="absolute flex top-3.75 left-3.75 gap-1.25">
             {
               isNew ? <div
                 className="py-1 px-2.25 bg-center bg-cover text-foreground text-xs align-middle rounded-[6px]"
@@ -64,10 +97,10 @@ function CreatorPostCard({
                 <LockFilledIcon />
               </div> : null
             }
-          </div>
+          </motion.div>
 
           {/* Tags\Duration */}
-          <div className="flex flex-col gap-5 self-end group-hover:hidden">
+          <motion.div variants={tagsVariants} className="flex flex-col gap-5 self-end group-hover:hidden">
             <Image
               src={creator.logo}
               alt={creator.name}
@@ -91,15 +124,15 @@ function CreatorPostCard({
               }
             </div>
 
-          </div>
+          </motion.div>
           {/* Hovered */}
-          <div className="hidden justify-between absolute top-3.5 right-3.75 group-hover:flex">
+          <motion.div className="flex justify-between absolute top-3.5 right-3.75" variants={buttonsVariants}>
             <div className="h-fit bg-translucent-bg py-0.5 px-2 text-[12px] rounded-[6px]">
               <Text weight={'normal'} size={'xxs'}>1/80</Text>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="hidden flex-col gap-2.5 justify-between items-center absolute bottom-5 right-3.75 group-hover:flex">
+          <motion.div className="flex flex-col gap-2.5 justify-between items-center absolute bottom-5 right-3.75" variants={buttonsVariants}>
             <div className="flex flex-col items-center gap-0.5">
               <HeartFilledIcon className="h-7 w-7" />
               <Text size={'xxs'}>{stats.likes}</Text>
@@ -118,12 +151,12 @@ function CreatorPostCard({
             </div>
 
             <OptionsIcon className="w-4" />
-          </div>
+          </motion.div>
 
         </div>
 
         {/* Hovered State */}
-      </div>
+      </motion.div>
 
       {/* Details */}
       <div className="flex items-center gap-3.75">
@@ -146,7 +179,7 @@ function CreatorPostCard({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

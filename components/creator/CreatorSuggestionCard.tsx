@@ -1,9 +1,12 @@
+"use client"
+
 import { AddIcon, GalleryIcon, StarHollowIcon } from "@/assets/icons";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import { Text } from "../ui/text"
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { GradientText } from "../ui/gradientText";
+import { motion } from "motion/react";
 
 export interface CreatorSuggestionCardProps {
   name: string;
@@ -18,7 +21,11 @@ function CreatorSuggestionCard({
 }: CreatorSuggestionCardProps) {
 
   return (
-    <div className="p-5 overflow-hidden rounded-[15px] bg-card-hover-bg cursor-pointer border border-[#FFFFFF10]">
+    <motion.div 
+    whileHover={{
+      backgroundColor: 'var(--card-muted-hover)'
+    }}
+    className="p-5 overflow-hidden rounded-[15px] bg-card-hover-bg cursor-pointer border border-[#FFFFFF10]">
       <div className="flex gap-3.75 mb-5">
         {/* @ts-ignore */}
         <Avatar style={{ cornerShape: 'squircle' }} className="h-14.5 w-auto aspect-square rounded-4xl [&::after]:border-0">
@@ -76,7 +83,7 @@ function CreatorSuggestionCard({
           })
         }
       </div>
-    </div >
+    </motion.div >
   )
 }
 
