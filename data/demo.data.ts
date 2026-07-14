@@ -340,4 +340,67 @@ export const TEMP_CREATOR_SUGGESTION_CARD = {
     logo: "/images/Chucky_logo.png"
 }
 
+export const TEMP_REVIEWS = [
+    {
+        profilePic: '/images/creator-star2.jpg',
+        name: 'Deja Vu',
+        username: 'Dejavu@123',
+        postedAt: '23m ago',
+        rating: 5,
+        description: "Honestly didn't even need the 10 minutes. She got me in 4 😂 Knew exactly what I wanted, like she read my mind before I even said anything",
+        creatorImage: '/images/creator-star1.jpg',
+        tags: ["8 custom pics", "Video message", "Playful"],
+    },
+    {
+        profilePic: '/images/creator-star1.jpg',
+        name: 'Eliza Ibarra',
+        username: 'Dejavu@123',
+        postedAt: '23m ago',
+        rating: 4,
+        description: "Honestly didn't even need the 10 minutes. She got me in 4 😂 Knew exactly what I wanted, like she read my mind before I even said anything",
+        creatorImage: '/images/creator-star2.jpg',
+        tags: ["8 custom pics", "Playful", "Curvy"],
+    },
+    {
+        profilePic: '/images/creator-star1.jpg',
+        name: 'Deja Vu',
+        username: 'Dejavu@123',
+        postedAt: '23m ago',
+        rating: 3,
+        description: "Honestly didn't even need the 10 minutes. She got me in 4 😂 Knew exactly what I wanted, like she read my mind before I even said anything",
+        creatorImage: '/images/creator-star2.jpg',
+        tags: ["8 custom pics", "Video message", "Playful"],
+    },
+    {
+        profilePic: '/images/creator-star2.jpg',
+        name: 'Deja Vu',
+        username: 'Dejavu@123',
+        postedAt: '23m ago',
+        rating: 5,
+        description: "Honestly didn't even need the 10 minutes. She got me in 4 😂 Knew exactly what I wanted, like she read my mind before I even said anything",
+        creatorImage: '/images/creator-star1.jpg',
+        tags: ["8 custom pics", "Video message", "Playful"],
+    },
+    {
+        profilePic: '/images/creator-star2.jpg',
+        name: 'Deja Vu',
+        username: 'Dejavu@123',
+        postedAt: '23m ago',
+        rating: 5,
+        description: "Honestly didn't even need the 10 minutes. She got me in 4 😂 Knew exactly what I wanted, like she read my mind before I even said anything",
+        creatorImage: '/images/creator-star1.jpg',
+        tags: ["8 custom pics", "Video message", "Playful"],
+    },
+    {
+        profilePic: '/images/creator-star2.jpg',
+        name: 'Deja Vu',
+        username: 'Dejavu@123',
+        postedAt: '23m ago',
+        rating: 5,
+        description: "Honestly didn't even need the 10 minutes. She got me in 4 😂 Knew exactly what I wanted, like she read my mind before I even said anything",
+        creatorImage: '/images/creator-star1.jpg',
+        tags: ["8 custom pics", "Video message", "Playful"],
+    },
+]
+
 export const TEMP_USER_IMAGE = "https://plus.unsplash.com/premium_photo-1681506669115-cb6b2d30dbc7?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

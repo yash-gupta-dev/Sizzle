@@ -3,7 +3,7 @@ import HeroCard from "@/components/hero/heroCard"
 import SliderHOC from "@/hoc/SliderHOC"
 import CreatorStarCard from "@/components/creator/CreatorStarCard"
 import CategoryCard from "@/components/cartegories/CategoryCard";
-import { TEMP_CATEGORIES, TEMP_CREATOR_DATA, TEMP_CREATOR_ORDER_CARD, TEMP_CREATOR_SUGGESTION_CARD, TEMP_FEATURED_CREATORS, TEMP_HERO_DATA, TEMP_USER_IMAGE } from "@/data/demo.data";
+import { TEMP_CATEGORIES, TEMP_CREATOR_DATA, TEMP_CREATOR_ORDER_CARD, TEMP_CREATOR_SUGGESTION_CARD, TEMP_FEATURED_CREATORS, TEMP_HERO_DATA, TEMP_REVIEWS, TEMP_USER_IMAGE } from "@/data/demo.data";
 import CreatorPostCard from "@/components/creator/CreatorPostCard";
 import CreatorCard from "@/components/creator/CreatorCard";
 import CreatorSuggestionSection from "@/components/creator/CreatorSuggestionSection";
@@ -11,6 +11,7 @@ import CategoryChip from "@/components/cartegories/CategoryChip";
 import CreatorSmallCard from "@/components/creator/CreatorSmallCard";
 import HottestCreatorCard from "@/components/creator/HottestCreatorCard";
 import EveryonesBookingCreatorCard from "@/components/creator/EveryonesBookingCreatorCard";
+import ReviewCard from "@/components/reviews/ReviewCard";
 
 export default function Page() {
   return (
@@ -183,11 +184,21 @@ export default function Page() {
         }
       </SliderHOC>
 
-      <SliderHOC title="Fresh from creators you tipped" contentClassName="gap-0">
+      <SliderHOC title="Fresh from creators you tipped" contentClassName="gap-0 pl-7.5">
         {
           TEMP_FEATURED_CREATORS.map((creator, i) => {
             return <CarouselItem className="basis-1/4 w-78 p-0" key={creator.title + i}>
               <CreatorPostCard {...creator} />
+            </CarouselItem>
+          })
+        }
+      </SliderHOC>
+
+      <SliderHOC title="Straight from verified buyers" contentClassName="gap-5 pl-7.5">
+        {
+          TEMP_REVIEWS.map((review, i) => {
+            return <CarouselItem className="basis-1/4 w-78 p-0" key={review.name + i}>
+              <ReviewCard {...review} />
             </CarouselItem>
           })
         }

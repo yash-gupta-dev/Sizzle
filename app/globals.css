@@ -47,6 +47,7 @@
   --color-card-muted-hover: var(--card-muted-hover);
   --color-card-hover: var(--card-hover);
   --color-premium: var(--yellow-primary);
+  --color-yellow-secondary: var(--yellow-secondary);
   --color-border-muted: var(--border-muted);
   --color-border-muted-hover: var(--border-muted-hover);
   --color-nav-bg: var(--nav-bg);
@@ -72,6 +73,7 @@
   --gray-8: #A3A3A3;
   --gray-9: #DFDCD7;
   --yellow-primary: #F4BB2E;
+  --yellow-secondary: #FBFF60;
   --radius: 0.625rem;
 
   /* Theme mappings linking semantic names to standardized ordered gray scales */

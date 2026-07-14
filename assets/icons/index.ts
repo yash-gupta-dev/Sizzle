@@ -28,3 +28,4 @@ export { default as SaveBookmarkIcon } from "@/assets/icons/save-bookmark.svg";
 export { default as LikeFilledIcon } from "@/assets/icons/like-filled.svg";
 export { default as FlashFilledIcon } from "@/assets/icons/flash-filled.svg";
 export { default as UserIcon } from "@/assets/icons/user.svg";
+export { default as StarHollowIcon } from "@/assets/icons/star-hollow.svg";
