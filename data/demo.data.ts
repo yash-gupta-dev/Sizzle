@@ -21,6 +21,28 @@ export const TEMP_HERO_DATA = [
         description: "Life got so serious lately, I have almost forgot I used to paint 😅 may this post will be a",
         stats: {}
     },
+    {
+        image: "/images/banner1.webp",
+        badge: "TOP EARNER",
+        logo: "/images/Chucky_logo.png",
+        director: "Eliza Ibarra",
+        duration: "7:03",
+        tags: ["Beauty", "Fitness"],
+        views: 212,
+        description: "I got so serious lately, I have almost forgot I used to paint 😅 may this post will be a",
+        stats: {}
+    },
+        {
+        image: "/images/banner2.webp",
+        badge: "Original",
+        logo: "/images/American-Pie.png",
+        director: "Leone Cole",
+        duration: "6:03",
+        tags: ["Beauty"],
+        views: 812,
+        description: "Life got so serious lately, I have almost forgot I used to paint 😅 may this post will be a",
+        stats: {}
+    },
 ];
 
 export const TEMP_CREATOR_DATA = [
@@ -182,6 +204,7 @@ export const TEMP_FEATURED_CREATORS = [
         isNew: false,
         isLocked: false,
         duration: "4:28",
+        isVideo: false,
         cover: [
             "/images/creator-star2.jpg"
         ],
@@ -203,6 +226,7 @@ export const TEMP_FEATURED_CREATORS = [
     {
         isNew: true,
         isLocked: true,
+        isVideo: true,
         duration: "6:03",
         cover: [
             "/images/creator-star1.jpg"
@@ -225,6 +249,7 @@ export const TEMP_FEATURED_CREATORS = [
     {
         isNew: true,
         isLocked: true,
+        isVideo: true,
         duration: "6:03",
         cover: [
             "/images/creator-star2.jpg"
@@ -247,6 +272,7 @@ export const TEMP_FEATURED_CREATORS = [
     {
         isNew: false,
         isLocked: true,
+        isVideo: false,
         duration: "6:03",
         cover: [
             "/images/creator-star1.jpg"
@@ -270,6 +296,7 @@ export const TEMP_FEATURED_CREATORS = [
         isNew: true,
         isLocked: false,
         duration: "6:03",
+        isVideo: false,
         cover: [
             "/images/creator-star2.jpg"
         ],
@@ -347,6 +374,13 @@ export const TEMP_CREATOR_SUGGESTION_CARD = {
     categories: ["Curvy", "Nerdy", "Playful"],
     cover: "/images/creator-cover.jpg",
     logo: "/images/Chucky_logo.png"
+}
+
+export const TEMP_CREATOR2_SUGGESTION_CARD = {
+    name: "Zuri Laurent",
+    categories: ["Curvy", "Nerdy", "Playful"],
+    cover: "/images/creator-cover2.jpg",
+    logo: "/images/Der_perfekte_Ex.png"
 }
 
 export const TEMP_REVIEWS = [

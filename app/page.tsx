@@ -3,7 +3,7 @@ import HeroCard from "@/components/hero/heroCard"
 import SliderHOC from "@/hoc/SliderHOC"
 import CreatorStarCard from "@/components/creator/CreatorStarCard"
 import CategoryCard from "@/components/cartegories/CategoryCard";
-import { TEMP_CATEGORIES, TEMP_CREATOR_DATA, TEMP_CREATOR_ORDER_CARD, TEMP_CREATOR_SUGGESTION_CARD, TEMP_FEATURED_CREATORS, TEMP_HERO_DATA, TEMP_REVIEWS, TEMP_USER_IMAGE } from "@/data/demo.data";
+import { TEMP_CATEGORIES, TEMP_CREATOR2_SUGGESTION_CARD, TEMP_CREATOR_DATA, TEMP_CREATOR_ORDER_CARD, TEMP_CREATOR_SUGGESTION_CARD, TEMP_FEATURED_CREATORS, TEMP_HERO_DATA, TEMP_REVIEWS, TEMP_USER_IMAGE } from "@/data/demo.data";
 import CreatorPostCard from "@/components/creator/CreatorPostCard";
 import CreatorCard from "@/components/creator/CreatorCard";
 import CreatorSuggestionSection from "@/components/creator/CreatorSuggestionSection";
@@ -175,7 +175,7 @@ export default function Page() {
         }
       </SliderHOC>
 
-      <CreatorSuggestionSection {...TEMP_CREATOR_SUGGESTION_CARD} />
+      <CreatorSuggestionSection {...TEMP_CREATOR2_SUGGESTION_CARD} />
 
       <SliderHOC title="The 10 everyone's booking" supTitle="Top rated this week" className="pl-7.5" contentClassName="gap-30 pl-23.5">
         {
