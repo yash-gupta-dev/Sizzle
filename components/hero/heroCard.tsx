@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { Text } from "../ui/text";
 import { EyeIcon, LeaderBoardGradientIcon, SizzleLogo } from "@/assets/icons";
+import DynamicBorder from "../ui/dynamicBorder";
 
 interface HeroCardProps {
     image: string,
@@ -43,9 +44,7 @@ export default function HeroCard({
                 className="group h-120 relative rounded-[15px] p-4 bg-cover text-foreground"
                 style={{ backgroundImage: `url(${image})` }}
             >
-                <div className="absolute p-5 top-0 bottom-0 left-0 right-0 bg-[rgba(0,0,0,0.5)] rounded-[15px]">
-                    <div className="flex h-full border-2 border-white/50 rounded-[10px]" />
-                </div>
+                <DynamicBorder className="m-5"/>
 
                 <div className="flex items-center absolute top-12.5 left-12.5 bg-translucent-bg py-1.75 px-2.5 gap-1.25 text-[10px] rounded-[6px]">
                     {

@@ -1,6 +1,7 @@
 import { LeaderBoardGradientIcon } from "@/assets/icons";
 import { GradientText } from "../ui/gradientText";
 import { Text } from "../ui/text";
+import DynamicBorder from "../ui/dynamicBorder";
 
 export interface HottestCreatorCardProps {
     rank?: number;
@@ -29,12 +30,9 @@ function EveryonesBookingCreatorCard({
                 style={{ backgroundImage: `url(${image})` }}
             >
 
-                {!rank && <div
-                    className={`absolute top-3.75 bottom-3.75 left-3.75 right-3.75 rounded-[10px] border-2 z-20`}
-                    style={{ borderColor: primaryColor }}
-                />}
+                {!rank && <DynamicBorder className="m-3.75 z-30" borderColor={primaryColor} />}
 
-                <div className={`relative pl-${rank ? '5' : '7.5'} ${rank ? 'pb-5' : 'pb-7.5'}  w-full rounded-b-[15px]`}
+                <div className={`relative ${rank ? 'pl-5' : 'pl-11.5'} ${rank ? 'pb-5' : 'pb-11.5'}  w-full rounded-b-[15px]`}
                     style={{
                         backgroundImage: `linear-gradient(to bottom, #00000000 0%, ${primaryColor} 90%, ${primaryColor})`
                     }}
