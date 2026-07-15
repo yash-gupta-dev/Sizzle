@@ -373,7 +373,7 @@ export const TEMP_CREATOR_SUGGESTION_CARD = {
     name: "Georgina London",
     categories: ["Curvy", "Nerdy", "Playful"],
     cover: "/images/creator-cover.jpg",
-    logo: "/images/Chucky_logo.png"
+    logo: "/images/clueless-logo.png"
 }
 
 export const TEMP_CREATOR2_SUGGESTION_CARD = {
