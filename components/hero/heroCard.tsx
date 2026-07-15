@@ -44,14 +44,20 @@ export default function HeroCard({
                 className="group h-120 relative rounded-[15px] p-4 bg-cover text-foreground"
                 style={{ backgroundImage: `url(${image})` }}
             >
-                <DynamicBorder className="m-5"/>
+                <DynamicBorder className="m-5" />
 
-                <div className="flex items-center absolute top-12.5 left-12.5 bg-translucent-bg py-1.75 px-2.5 gap-1.25 text-[10px] rounded-[6px]">
-                    {
-                        badge === 'ORIGINAL' ? <SizzleLogo className="w-8.75 h-3" /> : <LeaderBoardGradientIcon />
-                    }
-                    <Text size={'xxs'}>{badge}</Text>
+                <div className="absolute top-12.5 left-12.5 flex items-center justify-center py-px pt-[0.5px] p-[0.5px] min-w-8.5 h-fit w-fit rounded-[6px]"
+                    style={{ backgroundImage: "linear-gradient(to left, #D9107F, #EE1E03, #F61785, #FC7C20)" }}
+                >
+                    <div className="relative top-[0.5px] flex items-center justify-center gap-1.25 bg-[#2A2925] w-full h-full rounded-[6px] py-1.75 px-2">
+                        {
+                            badge === 'ORIGINAL' ? <SizzleLogo className="w-8.75 h-3" /> : <LeaderBoardGradientIcon className="h-3" />
+                        }
+                        <Text size={'xxs'}>{badge}</Text>
+                    </div>
+
                 </div>
+
                 <div className="absolute left-12.5 bottom-12.5">
 
                     <div className="flex flex-col justify-betweens self-end">
