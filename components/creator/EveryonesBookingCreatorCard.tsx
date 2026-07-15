@@ -46,11 +46,15 @@ function EveryonesBookingCreatorCard({
                                 WebkitMaskImage: "linear-gradient(to bottom, transparent 10%, black 100%)",
                             }}
                         />
-                        <div className="relative flex items-center w-fit bg-translucent-bg py-1.5 px-2.5 gap-1.25 text-[10px] rounded-[6px] z-20">
-                            {
-                                <LeaderBoardGradientIcon />
-                            }
-                            <Text size={'xxs'}>Top Rated</Text>
+
+                        <div className="flex items-center justify-center py-px pt-[0.5px] p-[0.5px] min-w-8.5 h-fit w-fit rounded-[4px]"
+                            style={{ backgroundImage: "linear-gradient(to left, #D9107F, #EE1E03, #F61785, #FC7C20)" }}
+                        >
+                            <div className="flex items-center justify-center gap-1.25 bg-card-hover-bg w-full h-full rounded-[3px] px-2">
+                                <LeaderBoardGradientIcon className={"w-2"} />
+                                <GradientText size={'xxs'} className="leading-5.5" gradient="linear-gradient(to left, #D9107F, #EE1E03, #F61785, #FC7C20)">Top Rated</GradientText>
+                            </div>
+
                         </div>
 
                         <div className="relative mb-3.75 z-20">
