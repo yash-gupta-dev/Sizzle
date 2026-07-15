@@ -20,13 +20,12 @@ export default function Page() {
       {/* MARK: Hero */}
       <Carousel className="w-full mx-auto" opts={{
         align: "center",   // centers the active pair -> equal peek on both sides
-        loop: true,         // remove if you don't want infinite looping
         slidesToScroll: 1,  // step one slide at a time
       }}>
-        <CarouselContent className="w-full ml-0 flex justify-between px-7.5">
+        <CarouselContent className="w-full ml-0 flex justify-between pl-3.5 pr-7.5">
           {
             TEMP_HERO_DATA.map((item) => {
-              return <CarouselItem key={item.director} className="flex-1 pl-0">
+              return <CarouselItem key={item.director} className="flex-1 min-w-[49vw] pl-0">
                 <HeroCard
                   image={item.image}
                   director={item.director}

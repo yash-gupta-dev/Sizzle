@@ -37,7 +37,7 @@ export default function HeroCard({
             initial={false}
             transition={{ duration: 0.2, ease: "easeInOut" }}
             whileHover={{ backgroundColor: 'var(--gray-3)' }}
-            className="p-3 rounded-[15px] cursor-pointer"
+            className="p-3 rounded-[15px] w-full cursor-pointer"
         >
             {/* MARK: Hero Image */}
             <div
