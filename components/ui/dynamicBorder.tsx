@@ -25,8 +25,7 @@ function DynamicBorder({
                 style={{ width: '15px', height: `calc(100% - ${logoSizeInPX / 3.6 + 10}px)`, borderColor }}
             />
 
-            <SizzleLogo className={cn(`absolute bottom-0 right-0 w-${logoSize + ""}`, logoClass)} />
-
+            <SizzleLogo className={cn(`absolute bottom-0 right-0`, logoClass)} style={{width: logoSizeInPX}}/>
 
             {/* bottom border */}
             <div

@@ -30,7 +30,7 @@ function EveryonesBookingCreatorCard({
                 style={{ backgroundImage: `url(${image})` }}
             >
 
-                {!rank && <DynamicBorder className="m-3.75 z-30" borderColor={primaryColor} />}
+                {!rank && <DynamicBorder className="m-3.75 z-30" borderColor={primaryColor} logoSize={10.5}/>}
 
                 <div className={`relative ${rank ? 'pl-5' : 'pl-11.5'} ${rank ? 'pb-5' : 'pb-11.5'}  w-full rounded-b-[15px]`}
                     style={{
