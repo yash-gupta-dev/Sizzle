@@ -46,7 +46,7 @@ function HottestCreatorCard({
                         ))}
                     </div>
 
-                    <Text className="relative text-foreground z-20" weight={'normal'} size={'sm'}>{categories?.join(" · ")}</Text>
+                    <Text className="relative text-foreground z-20" weight={'light'} size={'sm'}>{categories?.join(" · ")}</Text>
                 </div>
 
             </div>
