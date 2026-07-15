@@ -1,14 +1,17 @@
+"use client"
+
 import { LeftDirectionIcon, RightDirectionIcon } from "@/assets/icons";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Carousel, CarouselContent } from "@/components/ui/carousel";
+import { Carousel, CarouselApi, CarouselContent, CarouselPrevious, useCarousel } from "@/components/ui/carousel";
 import { Text } from "@/components/ui/text";
 import { cn } from "@/lib/utils";
 import { ClassValue } from "clsx";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useEffect, useState } from "react";
 
 export interface CategoriesCardProps {
     title?: string;
+    showNavButtons?: boolean;
     supTitle?: string;
     leftImage?: string;
     className?: ClassValue;
@@ -17,12 +20,22 @@ export interface CategoriesCardProps {
 
 function SliderHOC({
     title,
+    showNavButtons = true,
     supTitle,
     leftImage,
     children,
     className,
     contentClassName
 }: PropsWithChildren<CategoriesCardProps>) {
+    const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+
+    const handlePrevious = () => {
+        carouselApi?.scrollPrev();
+    }
+
+    const handleNext = () => {
+        carouselApi?.scrollNext()
+    }
 
     return (
         <>
@@ -42,15 +55,15 @@ function SliderHOC({
                     </div>}
                 </div>
 
-                <div className="flex gap-1.5">
-                    <Button icon={<LeftDirectionIcon className="w-3 h-3" />} className={'p-3 rounded-[12px]'} />
-                    <Button icon={<RightDirectionIcon className="w-3 h-3" />} className={'p-3 rounded-[12px]'} />
-                </div>
+                {showNavButtons ? <div className="flex gap-1.5">
+                    <Button icon={<LeftDirectionIcon className="w-3 h-3" />} onClick={handlePrevious} className={'p-3 rounded-[12px]'} />
+                    <Button icon={<RightDirectionIcon className="w-3 h-3" />} onClick={handleNext} className={'p-3 rounded-[12px]'} />
+                </div> : null}
             </div>
                 : null}
 
-            <Carousel className={cn("w-full", className)} opts={{
-                align: "center",   // centers the active pair -> equal peek on both sides
+            <Carousel className={cn("w-full", className)} setApi={setCarouselApi} opts={{
+                align: "start",   // centers the active pair -> equal peek on both sides
                 slidesToScroll: 1,  // step one slide at a time
                 skipSnaps: true
             }}>

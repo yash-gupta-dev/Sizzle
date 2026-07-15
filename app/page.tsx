@@ -46,7 +46,7 @@ export default function Page() {
       <SliderHOC title="Fresh from your creators" className="pl-7.5">
         {
           TEMP_CREATOR_DATA.map(creator => {
-            return <CarouselItem className="max-w-fit p-0" key={creator.id}>
+            return <CarouselItem className="shrink-0 max-w-fit p-0" key={creator.id}>
               <CreatorStarCard name={creator.name} image={creator.image} photos={creator.photos} videos={creator.videos} />
             </CarouselItem>
           })
@@ -132,7 +132,7 @@ export default function Page() {
         }
       </SliderHOC>
 
-      <SliderHOC title="More Creators Worth Knowing" supTitle="Explore by category" className="pl-7.5" contentClassName="gap-1.5">
+      <SliderHOC title="More Creators Worth Knowing" supTitle="Explore by category" className="pl-7.5" contentClassName="gap-1.5" showNavButtons={false}>
         {
           [{ title: "All" }, ...TEMP_CATEGORIES].map(category => {
             return <CarouselItem className="md:basis-1/6 max-w-fit p-0" key={category.title}>
