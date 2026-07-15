@@ -49,7 +49,7 @@ function SliderHOC({
                     {title && <div className="flex flex-col gap-2 leading-5">
                         {supTitle && <Text size={'sm'} weight={'normal'} className="mb-2 text-card-hover leading-3.5">{supTitle}</Text>}
                         <div className="flex items-center gap-[8.75px]">
-                            <Text className="leading-none" size={'md'}>{title}</Text>
+                            <Text className="leading-5" size={'md'}>{title}</Text>
                             <RightDirectionIcon className="h-2.5" />
                         </div>
                     </div>}
