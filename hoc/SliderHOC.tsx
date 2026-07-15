@@ -39,8 +39,8 @@ function SliderHOC({
 
     return (
         <>
-            {leftImage || title ? <div className="flex items-center justify-between gap-3.75 mt-14.25 px-7.5 mb-7.5">
-                <div className="flex items-center">
+            {leftImage || title ? <div className="flex items-center justify-between mt-14.25 px-7.5 mb-7.5">
+                <div className="flex items-center gap-3.75">
                     {/* @ts-ignore */}
                     {leftImage && <Avatar style={{ cornerShape: 'squircle' }} className="h-12.5 w-auto aspect-square rounded-4xl [&::after]:border-0">
                         {/* @ts-ignore */}

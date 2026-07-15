@@ -12,6 +12,7 @@ export interface CreatorCardProps {
   categories?: string[];
   likePercentage: number;
   likes: number;
+  bordered?: boolean;
 }
 
 function CreatorCard({
@@ -21,17 +22,23 @@ function CreatorCard({
   categories,
   likes,
   likePercentage,
+  bordered = false
 }: CreatorCardProps) {
 
   return (
     <div className="cursor-pointer">
-      <motion.div
-        initial={{}}
-        whileHover={{ scale: 1.05 }}
-        className="w-50 h-50 mb-3 overflow-hidden bg-center bg-cover rounded-full"
+      <div className="rounded-full p-0.5 mb-3"
         // @ts-ignore: Corner shape casuses issues
-        style={{ cornerShape: 'squircle', backgroundImage: `url(${image})` }}
-      />
+        style={{cornerShape: 'squircle', backgroundImage: bordered ? 'linear-gradient(#D9107F, #EE1E03, #F61785, #FC7C20)' : null}}
+      >
+        <motion.div
+          initial={{}}
+          whileHover={{ scale: 1.05 }}
+          className="w-50 h-50 overflow-hidden bg-center bg-cover rounded-full"
+          // @ts-ignore: Corner shape casuses issues
+          style={{ cornerShape: 'squircle', backgroundImage: `url(${image})` }}
+        />
+      </div>
 
       <Text className="leading-5">{name}</Text>
 
