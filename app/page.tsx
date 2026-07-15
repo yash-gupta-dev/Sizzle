@@ -208,7 +208,7 @@ export default function Page() {
         {
           TEMP_CREATOR_ORDER_CARD.map((creator, i) => {
             return <CarouselItem className="md:basis-1/6 max-w-fit pl-0" key={creator.name + i}>
-              <CreatorCard {...creator} isSuggestion />
+              <CreatorCard {...creator} isSuggestion isNew />
             </CarouselItem>
           })
         }

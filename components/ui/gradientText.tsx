@@ -9,7 +9,6 @@ const GradientText = ({
     ...rest
 }: GradientTextProps) => {
     return <Text {...rest} style={{
-        ...rest.style,
         backgroundImage: gradient,
         backgroundClip: "text",
         WebkitBackgroundClip: "text",
@@ -17,7 +16,8 @@ const GradientText = ({
         WebkitTextFillColor: "transparent",
         fontSize: `${rest.size || 60}px`,
         fontFamily: 'var(--font-plak-condensed)',
-        fontWeight: '900'
+        fontWeight: '900',
+        ...rest.style,
     }}
     >{rest.children}</Text>
 }

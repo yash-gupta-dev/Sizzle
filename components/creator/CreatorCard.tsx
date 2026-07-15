@@ -4,11 +4,13 @@ import { AddIcon, FlashFilledIcon, LikeFilledIcon } from "@/assets/icons";
 import { Text } from "../ui/text"
 import { motion } from "motion/react";
 import { Button } from "../ui/button";
+import { GradientText } from "../ui/gradientText";
 
 export interface CreatorCardProps {
   image: string;
   name: string;
   isSuggestion?: boolean;
+  isNew?: boolean;
   categories?: string[];
   likePercentage: number;
   likes: number;
@@ -19,6 +21,7 @@ function CreatorCard({
   image,
   name,
   isSuggestion = false,
+  isNew = false,
   categories,
   likes,
   likePercentage,
@@ -29,7 +32,7 @@ function CreatorCard({
     <div className="cursor-pointer">
       <div className="rounded-full p-0.5 mb-3"
         // @ts-ignore: Corner shape casuses issues
-        style={{cornerShape: 'squircle', backgroundImage: bordered ? 'linear-gradient(#D9107F, #EE1E03, #F61785, #FC7C20)' : null}}
+        style={{ cornerShape: 'squircle', backgroundImage: bordered ? 'linear-gradient(#D9107F, #EE1E03, #F61785, #FC7C20)' : null }}
       >
         <motion.div
           initial={{}}
@@ -40,7 +43,19 @@ function CreatorCard({
         />
       </div>
 
-      <Text className="leading-5">{name}</Text>
+      <div className="flex gap-2">
+        <Text className="leading-5">{name}</Text>
+
+        <div className="p-px min-w-8.5 rounded-[4px]"
+          style={{ backgroundImage: "linear-gradient(to left, #D9107F, #EE1E03, #F61785, #FC7C20)" }}
+        >
+          <div className="bg-background h-full rounded-[3px] px-1.25">
+            <GradientText className="text-center leading-[15px]" gradient="linear-gradient(to left, #D9107F, #EE1E03, #F61785, #FC7C20)" style={{
+              fontSize: 12
+            }}>New</GradientText>
+          </div>
+        </div>
+      </div>
 
       {isSuggestion ? <Text className="text-card-hover" weight={'normal'} size={'sm'}>{categories?.join(" · ")}</Text>
         :
