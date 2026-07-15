@@ -121,14 +121,14 @@ function CreatorPostCard({
 
           </motion.div>
           {/* Hovered */}
-          {!isCertified ? <motion.div className="flex justify-between absolute top-3.5 right-3.75" variants={buttonsVariants}>
+          {(!isCertified && !isVideo) ? <motion.div className="flex justify-between absolute top-3.5 right-3.75" variants={buttonsVariants}>
             <div className="h-fit bg-translucent-bg py-0.5 px-2 text-[12px] rounded-[6px]">
               <Text weight={'normal'} size={'xxs'}>1/80</Text>
             </div>
           </motion.div> : null}
 
           <motion.div className="flex flex-col items-end gap-2.5 justify-between absolute bottom-5 left-3.75 right-3.75" variants={buttonsVariants}>
-            <div className={cn("relative flex flex-col items-center gap-2.5", isCertified ? 'right-3.75' : '')}>
+            {!isVideo ?<div className={cn("relative flex flex-col items-center gap-2.5", isCertified ? 'right-3.75' : '')}>
               <div className="flex flex-col items-center gap-0.5">
                 <HeartFilledIcon className="h-7 w-7" />
                 <Text size={'xxs'}>{stats.likes}</Text>
@@ -147,13 +147,13 @@ function CreatorPostCard({
               </div>
 
               <OptionsIcon className="w-4" />
-            </div>
-            {/* {
+            </div> : null}
+            {
               isVideo ? <Slider
-
-              // className="relative z-10"
+              // value={50}
+              // defaultValue={50}
               /> : null
-            } */}
+            }
           </motion.div>
 
         </div>
