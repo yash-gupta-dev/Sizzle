@@ -57,7 +57,7 @@ function ReviewCard({
 
       <Text size={'sm'} weight={'normal'}>"{description}"</Text>
 
-      <div className="flex gap-1.5 mt-3.75">
+      <div className="flex items-center gap-1.5 mt-3.75">
         {/* @ts-ignore */}
         <Avatar style={{ cornerShape: 'squircle' }} className="h-7 w-auto aspect-square rounded-4xl [&::after]:border-0">
           {/* @ts-ignore */}
@@ -66,7 +66,7 @@ function ReviewCard({
 
         {
           tags.map(tag => {
-            return <div className="py-1 px-3 bg-card-muted-hover rounded-[12px]" key={tag}>
+            return <div className="py-1 px-3 bg-card-muted-hover rounded-[12px] border-[0.5px] border-foreground/15" key={tag}>
               <Text size={'xs'} className="leading-5.5 align-bottom">{tag}</Text>
             </div>
           })
