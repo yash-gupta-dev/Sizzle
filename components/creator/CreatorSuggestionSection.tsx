@@ -1,11 +1,15 @@
-import { AddIcon, UsdCircleIcon, UserIcon } from "@/assets/icons";
+"use client"
+
+import { AddIcon, LeftDirectionIcon, RightDirectionIcon, UsdCircleIcon, UserIcon } from "@/assets/icons";
 import { Text } from "../ui/text"
 import Image from "next/image";
 import { Button } from "../ui/button";
 import SliderHOC from "@/hoc/SliderHOC";
 import { TEMP_FEATURED_CREATORS } from "@/data/demo.data";
-import { CarouselItem } from "../ui/carousel";
+import { Carousel, CarouselApi, CarouselContent, CarouselItem } from "../ui/carousel";
 import CreatorPostCard from "./CreatorPostCard";
+import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 export interface CreatorSuggestionSection {
     name: string;
@@ -20,6 +24,15 @@ function CreatorSuggestionSection({
     logo,
     categories
 }: CreatorSuggestionSection) {
+    const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+
+    const handlePrevious = () => {
+        carouselApi?.scrollPrev();
+    }
+
+    const handleNext = () => {
+        carouselApi?.scrollNext()
+    }
 
     return (
         <div
@@ -87,15 +100,27 @@ function CreatorSuggestionSection({
                     </div>
                 </div>
 
-                <SliderHOC contentClassName="gap-0">
-                    {
-                        TEMP_FEATURED_CREATORS.map((creator, i) => {
-                            return <CarouselItem className="basis-1/4 w-61.5 p-0" key={creator.title + i}>
-                                <CreatorPostCard {...creator} minHeight={95} isFromProfile={true} />
-                            </CarouselItem>
-                        })
-                    }
-                </SliderHOC>
+                <div>
+                    <div className="flex justify-end max-w-[50vw] gap-1.5 mb-4.5 pr-7.5">
+                        <Button icon={<LeftDirectionIcon className="w-3 h-3" />} onClick={handlePrevious} className={'p-3 rounded-[12px]'} />
+                        <Button icon={<RightDirectionIcon className="w-3 h-3" />} onClick={handleNext} className={'p-3 rounded-[12px]'} />
+                    </div>
+                    <Carousel className={"w-[50vw]"} setApi={setCarouselApi} opts={{
+                        align: "start",   // centers the active pair -> equal peek on both sides
+                        slidesToScroll: 1,  // step one slide at a time
+                        skipSnaps: true
+                    }}>
+                        <CarouselContent className={"w-[50vw] ml-0 flex gap-0"}>
+                            {
+                                TEMP_FEATURED_CREATORS.map((creator, i) => {
+                                    return <CarouselItem className="basis-3/8 min-w-61.5 p-0" key={creator.title + i}>
+                                        <CreatorPostCard {...creator} minHeight={95} isFromProfile={true} />
+                                    </CarouselItem>
+                                })
+                            }
+                        </CarouselContent>
+                    </Carousel>
+                </div>
 
 
             </div>
