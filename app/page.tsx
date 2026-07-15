@@ -177,7 +177,7 @@ export default function Page() {
 
       <CreatorSuggestionSection {...TEMP_CREATOR_SUGGESTION_CARD} />
 
-      <SliderHOC title="Top rated this week" supTitle="The 10 everyone's booking" className="pl-7.5" contentClassName="gap-30 pl-23.5">
+      <SliderHOC title="The 10 everyone's booking" supTitle="Top rated this week" className="pl-7.5" contentClassName="gap-30 pl-23.5">
         {
           TEMP_CREATOR_DATA.map((c, i) => <EveryonesBookingCreatorCard {...c} key={c.id} rank={i + 1} />)
 
