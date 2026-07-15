@@ -1,6 +1,6 @@
 "use client"
 
-import { AddIcon, GalleryIcon, StarHollowIcon } from "@/assets/icons";
+import { AddIcon, CrownRewardIcon, GalleryIcon, PlaylistIcon, StarHollowIcon } from "@/assets/icons";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import { Text } from "../ui/text"
 import Image from "next/image";
@@ -36,18 +36,18 @@ function CreatorSuggestionCard({
         <div className="flex justify-between items-center w-full">
           <div>
             <Text>{name}</Text>
-            <div className="flex items-center gap-2.5 mt-1.5">
+            <div className="flex items-center gap-2.5 mt-1.5 text-card-hover">
               <div className="flex items-center gap-1 5">
                 <GalleryIcon className="h-3" />
-                <Text weight={'normal'} size={'sm'} className="text-card-hover">3.4K</Text>
+                <Text weight={'normal'} size={'sm'}>3.4K</Text>
               </div>
               <div className="flex items-center gap-1 5">
-                <GalleryIcon className="h-3" />
-                <Text weight={'normal'} size={'sm'} className="text-card-hover">3.4K</Text>
+                <PlaylistIcon className="h-3" />
+                <Text weight={'normal'} size={'sm'}>3.4K</Text>
               </div>
               <div className="flex items-center gap-1 5">
-                <GalleryIcon className="h-3" />
-                <Text weight={'normal'} size={'sm'} className="text-card-hover">3.4K</Text>
+                <CrownRewardIcon className="h-3" />
+                <Text weight={'normal'} size={'sm'}>3.4K</Text>
               </div>
             </div>
           </div>
