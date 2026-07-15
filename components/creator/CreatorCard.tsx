@@ -64,7 +64,7 @@ function CreatorCard({
             <div className="flex items-center gap-1.25">
               <LikeFilledIcon className="h-3" />
               <Text weight={'normal'} size={"sm"}>{likePercentage}%</Text>
-              <Text weight={'light'} size={"xs"} className="text-text-secondary">({likes})</Text>
+              <Text weight={'light'} size={"xs"} className="text-card-hover">({likes})</Text>
             </div>
             <div className="flex items-center gap-1">
               <FlashFilledIcon className="h-3 text-premium" />
