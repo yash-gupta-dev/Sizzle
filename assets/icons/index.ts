@@ -30,3 +30,4 @@ export { default as LikeFilledIcon } from "@/assets/icons/like-filled.svg";
 export { default as FlashFilledIcon } from "@/assets/icons/flash-filled.svg";
 export { default as UserIcon } from "@/assets/icons/user.svg";
 export { default as StarHollowIcon } from "@/assets/icons/star-hollow.svg";
+export { default as SizzleCertifiedIcon } from "@/assets/icons/sizzle-certified.svg";

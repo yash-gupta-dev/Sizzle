@@ -6,29 +6,18 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { GradientText } from "../ui/gradientText";
+import { TEMP_FEATURED_CREATORS } from "@/data/demo.data";
+import { Slider } from "../ui/slider";
+import GradientSemiBorder from "../ui/gradientSemiBorder";
+import { cn } from "@/lib/utils";
 
-export interface CreatorCardPostProps {
-  isNew: boolean;
-  isLocked: boolean;
-  duration: string;
-  cover: string[];
-  stats: {
-    quality: string;
-    views: number;
-    likes: number;
-    comments: number;
-  };
-  rank?: number;
-  uploaded: string;
-  title: string;
-  tags: string[];
+type PostDataType = typeof TEMP_FEATURED_CREATORS[0]
+
+export interface CreatorCardPostProps extends PostDataType {
   minHeight?: number;
   isFromProfile?: boolean;
-  creator: {
-    image: string;
-    name: string;
-    logo: string;
-  };
+  isCertified?: boolean;
+  rank?: number;
 }
 
 function CreatorPostCard({
@@ -40,8 +29,10 @@ function CreatorPostCard({
   isLocked,
   isNew,
   rank,
+  isVideo,
   minHeight = 120,
   isFromProfile = false,
+  isCertified = false,
   stats
 }: CreatorCardPostProps) {
 
@@ -52,20 +43,20 @@ function CreatorPostCard({
     },
   };
 
-const tagsVariants = {
-  initial: { opacity: 1 },
-  hover: { opacity: 0 },
-};
+  const tagsVariants = {
+    initial: { opacity: 1 },
+    hover: { opacity: 0 },
+  };
 
-const buttonsVariants = {
-  initial: { opacity: 0 },
-  hover: { opacity: 1 },
-};
+  const buttonsVariants = {
+    initial: { opacity: 0 },
+    hover: { opacity: 1 },
+  };
 
-const imageVariants = {
-  initial: { opacity: 0.9 },
-  hover: { opacity: 1 },
-};
+  const imageVariants = {
+    initial: { opacity: 0.9 },
+    hover: { opacity: 1 },
+  };
 
   return (
     <motion.div
@@ -75,13 +66,17 @@ const imageVariants = {
       whileHover={'hover'}
       className="p-3 rounded-[15px] cursor-pointer h-full flex flex-col">
       <motion.div
-      variants={imageVariants}
-        className={`rounded-[15px] min-h-${minHeight} bg-center bg-cover`}
+        variants={imageVariants}
+        className={`relative rounded-[15px] min-h-${minHeight} bg-center bg-cover`}
         style={{ backgroundImage: `url(${cover})`, aspectRatio: '1/1.5434083601' }}
       >
+
+        {isCertified ? <GradientSemiBorder /> : null}
+
+
         <div className={`relative flex w-full h-full min-h-${minHeight} pl-3.75 bg-[rgba(0,0,0,0.1)] group`}>
           {/* Un-Hovered State */}
-          <motion.div
+          {!isCertified ? <motion.div
             variants={tagsVariants}
             className="absolute flex top-3.75 left-3.75 gap-1.25">
             {
@@ -97,7 +92,7 @@ const imageVariants = {
                 <LockFilledIcon />
               </div> : null
             }
-          </motion.div>
+          </motion.div> : null}
 
           {/* Tags\Duration */}
           <motion.div variants={tagsVariants} className="flex flex-col gap-5 self-end group-hover:hidden">
@@ -126,36 +121,42 @@ const imageVariants = {
 
           </motion.div>
           {/* Hovered */}
-          <motion.div className="flex justify-between absolute top-3.5 right-3.75" variants={buttonsVariants}>
+          {!isCertified ? <motion.div className="flex justify-between absolute top-3.5 right-3.75" variants={buttonsVariants}>
             <div className="h-fit bg-translucent-bg py-0.5 px-2 text-[12px] rounded-[6px]">
               <Text weight={'normal'} size={'xxs'}>1/80</Text>
             </div>
-          </motion.div>
+          </motion.div> : null}
 
-          <motion.div className="flex flex-col gap-2.5 justify-between items-center absolute bottom-5 right-3.75" variants={buttonsVariants}>
-            <div className="flex flex-col items-center gap-0.5">
-              <HeartFilledIcon className="h-7 w-7" />
-              <Text size={'xxs'}>{stats.likes}</Text>
-            </div>
-            <div className="flex flex-col items-center gap-0.5">
-              <ChatBubbleIcon className="h-7 w-7" />
-              <Text size={'xxs'}>{stats.likes}</Text>
-            </div>
-            <div className="flex flex-col items-center gap-0.5">
-              <UsdCircleIcon className="h-7 w-7" />
-              <Text size={'xxs'}>{stats.likes}</Text>
-            </div>
-            <div className="flex flex-col items-center gap-0.5">
-              <SaveBookmarkIcon className="h-7 w-7" />
-              <Text size={'xxs'}>{stats.likes}</Text>
-            </div>
+          <motion.div className="flex flex-col items-end gap-2.5 justify-between absolute bottom-5 left-3.75 right-3.75" variants={buttonsVariants}>
+            <div className={cn("relative flex flex-col items-center gap-2.5", isCertified ? 'right-3.75' : '')}>
+              <div className="flex flex-col items-center gap-0.5">
+                <HeartFilledIcon className="h-7 w-7" />
+                <Text size={'xxs'}>{stats.likes}</Text>
+              </div>
+              <div className="flex flex-col items-center gap-0.5">
+                <ChatBubbleIcon className="h-7 w-7" />
+                <Text size={'xxs'}>{stats.likes}</Text>
+              </div>
+              <div className="flex flex-col items-center gap-0.5">
+                <UsdCircleIcon className="h-7 w-7" />
+                <Text size={'xxs'}>{stats.likes}</Text>
+              </div>
+              <div className="flex flex-col items-center gap-0.5">
+                <SaveBookmarkIcon className="h-7 w-7" />
+                <Text size={'xxs'}>{stats.likes}</Text>
+              </div>
 
-            <OptionsIcon className="w-4" />
+              <OptionsIcon className="w-4" />
+            </div>
+            {/* {
+              isVideo ? <Slider
+
+              // className="relative z-10"
+              /> : null
+            } */}
           </motion.div>
 
         </div>
-
-        {/* Hovered State */}
       </motion.div>
 
       {/* Details */}

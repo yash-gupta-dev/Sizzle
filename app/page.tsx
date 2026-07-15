@@ -159,7 +159,7 @@ export default function Page() {
         {
           TEMP_FEATURED_CREATORS.map((creator, i) => {
             return <CarouselItem className="basis-1/4 w-78 p-0" key={creator.title + i}>
-              <CreatorPostCard {...creator} />
+              <CreatorPostCard {...creator} isCertified />
             </CarouselItem>
           })
         }
