@@ -21,7 +21,7 @@ function EveryonesBookingCreatorCard({
 
     return (
         <div className={`relative bg-center bg-cover ${!rank ? 'min-w-77.75 min-h-100' : ''}`}>
-            {rank ? <div className="absolute left-[-35%] z-10">
+            {rank ? <div className={`absolute ${rank === 1 ? "left-[-25%]" : "left-[-35%]"} z-10`}>
                 <GradientText size={'6xl'} gradient="linear-gradient(to bottom, #FFFFFF10 40%, #FFFFFF90)"
                 >{rank}</GradientText>
             </div> : null}
