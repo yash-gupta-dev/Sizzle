@@ -4,7 +4,7 @@ import { Avatar, AvatarImage } from "../ui/avatar";
 import { Text } from "../ui/text"
 import { motion } from "motion/react";
 
-export interface CategoryCardProps {
+export interface ReviewCardProps {
   name: string;
   username: string;
   postedAt: string;
@@ -24,7 +24,7 @@ function ReviewCard({
   description,
   tags,
   rating
-}: CategoryCardProps) {
+}: ReviewCardProps) {
 
   return (
     <motion.div 

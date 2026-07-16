@@ -53,11 +53,6 @@ export interface ButtonProps
   children?: ReactNode
   /** Icon-only button. Omit `children` when using this. */
   icon?: ReactNode
-  /** Icon shown before the text children. */
-  startIcon?: ReactNode
-  /** Icon shown after the text children. */
-  endIcon?: ReactNode
-
   weight?: "normal" | "bold" | "medium" | "semibold" | null | undefined
   fontSize?: "xs" | "sm" | "lg" | "base" | "md" | "xl" | "2xl" | "3xl" | "4xl" | null | undefined
 }

@@ -3,7 +3,7 @@ import { GradientText } from "../ui/gradientText";
 import { Text } from "../ui/text";
 import DynamicBorder from "../ui/dynamicBorder";
 
-export interface HottestCreatorCardProps {
+export interface EveryonesBookingCreatorCardProps {
     rank?: number;
     name: string;
     image: string;
@@ -17,7 +17,7 @@ function EveryonesBookingCreatorCard({
     image,
     primaryColor,
     categories
-}: HottestCreatorCardProps) {
+}: EveryonesBookingCreatorCardProps) {
 
     return (
         <div className={`relative bg-center bg-cover ${!rank ? 'min-w-77.75 min-h-100' : ''}`}>

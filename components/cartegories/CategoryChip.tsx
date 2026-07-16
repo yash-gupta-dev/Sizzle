@@ -2,13 +2,13 @@ import { Button } from "../ui/button";
 import { Text } from "../ui/text"
 import Image from "next/image";
 
-export interface CategoryCardProps {
+export interface CategoryCHipProps {
   name: string;
 }
 
 function CategoryChip({
   name,
-}: CategoryCardProps) {
+}: CategoryCHipProps) {
 
   const isAll = name === 'All';
 

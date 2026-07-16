@@ -25,7 +25,7 @@ function CreatorSmallCard({
       {/* @ts-ignore */}
       <Avatar style={{ cornerShape: 'squircle' }} className="h-15 w-auto aspect-square rounded-4xl [&::after]:border-0">
         {/* @ts-ignore */}
-        <AvatarImage style={{ cornerShape: 'squircle' }} className="w-full h-full object-cover rounded-4xl" src={image} />
+        <AvatarImage alt={name} style={{ cornerShape: 'squircle' }} className="w-full h-full object-cover rounded-4xl" src={image} />
       </Avatar>
 
       <div className="flex flex-col justify-center">

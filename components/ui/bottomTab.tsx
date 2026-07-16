@@ -51,11 +51,6 @@ export interface ButtonProps
   children?: ReactNode
   /** Icon-only button. Omit `children` when using this. */
   icon?: ReactNode
-  /** Icon shown before the text children. */
-  startIcon?: ReactNode
-  /** Icon shown after the text children. */
-  endIcon?: ReactNode
-
 }
 
 function BottomTab({

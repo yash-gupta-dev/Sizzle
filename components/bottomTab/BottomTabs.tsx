@@ -1,9 +1,6 @@
 "use client"
 
 import { ExploreFilledIcon, ExploreOutlineIcon, HomeFilledIcon, HomeOutlineIcon, LeaderBoardFilledIcon, LeaderBoardOutlineIcon, SaveFilledIcon, SaveOutlineIcon, SearchFilledIcon, SearchOutlineIcon } from "@/assets/icons";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { BottomTab } from "@/components/ui/bottomTab";
 import { useState } from "react";
 
