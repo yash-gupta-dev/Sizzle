@@ -17,7 +17,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("antialiased", `${plak.variable} ${plakText.variable} ${plakCompressed.variable} ${plakCondensed.variable} ${plakExtended.variable} ${plakNarrow.variable} ${plakWide.variable}`)}
     >
-      <body>
+      <body className="relative">
         <ThemeProvider>
           <Navbar />
           {children}

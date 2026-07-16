@@ -5,7 +5,11 @@ import { TEMP_USER_IMAGE } from "@/data/demo.data"
 
 export default function Navbar() {
     return (
-        <header className="p-7.5">
+        <header className="p-7.5 sticky top-0 z-30"
+            style={{
+                backgroundImage: 'linear-gradient(to bottom, #000000, #000000CC, #00000000)'
+            }}
+        >
             <div className="content-container flex w-full items-center">
                 <nav className="flex w-full items-center justify-between">
                     {/* Left Nav */}
