@@ -58,7 +58,6 @@ if (index !== null) {
       break;
   }
 }
-console.log(Logo);
 
   const parentVariants = {
     initial: {},

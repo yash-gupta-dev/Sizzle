@@ -19,7 +19,7 @@ function CategoryCard({
       initial={false}
       transition={{ duration: 0.2, ease: "easeInOut" }}
       whileHover={{ backgroundColor: 'var(--card-muted-hover)' }}
-      className="flex p-0 overflow-hidden items-center gap-7.5 w-51 rounded-[15px] bg-card-hover-bg cursor-pointer"
+      className="flex p-0 max-h-22.5 overflow-hidden items-center gap-7.5 w-51 rounded-[15px] bg-card-hover-bg cursor-pointer"
     >
       <Text
         className="w-[50%] max-w-[50%] pl-7.5 py-9.5 whitespace-pre font-(--font-plak-condensed) tracking-normal leading-1 capitalize text-[20px]"

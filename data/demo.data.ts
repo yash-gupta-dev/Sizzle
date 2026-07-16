@@ -74,7 +74,7 @@ export const TEMP_CREATOR_DATA = [
     },
     {
         id: 3,
-        image: '/images/creator-star1.jpg',
+        image: '/images/creator-star3.jpg',
         tagline: 'The tall blonde your algorithm keeps showing you',
         featuredImages: ["/images/creator-star1.jpg", "/images/creator-star2.jpg", "/images/creator-star1.jpg"],
         primaryColor: '#009C91',
@@ -107,7 +107,7 @@ export const TEMP_CREATOR_DATA = [
     },
     {
         id: 6,
-        image: '/images/creator-star2.jpg',
+        image: '/images/creator-star3.jpg',
         tagline: 'The tall blonde your algorithm keeps showing you',
         featuredImages: ["/images/creator-star2.jpg", "/images/creator-star2.jpg", "/images/creator-star1.jpg"],
         primaryColor: '#CC2FB0',
@@ -245,7 +245,7 @@ export const TEMP_FEATURED_CREATORS = [
         title: "I Tried The Morning Routine Every Influencer Swears By.",
         tags: ["Fitness"],
         creator: {
-            image: "/images/creator-star2.jpg",
+            image: "/images/creator-star3.jpg",
             name: "Leila Castillo",
             logo: "/images/Chucky_logo.png",
         }
@@ -256,7 +256,7 @@ export const TEMP_FEATURED_CREATORS = [
         isVideo: true,
         duration: "6:03",
         cover: [
-            "/images/creator-star2.jpg"
+            "/images/creator-star3.jpg"
         ],
         stats: {
             quality: "4K",
@@ -337,7 +337,7 @@ export const TEMP_CREATOR_ORDER_CARD = [
         categories: ["Curvy", "Nerdy", "Playful"],
     },
     {
-        image: "/images/creator-star1.jpg",
+        image: "/images/creator-star3.jpg",
         name: "Jade Monroe",
         likePercentage: 98,
         likes: 135,
@@ -395,7 +395,7 @@ export const TEMP_REVIEWS = [
         postedAt: '23m ago',
         rating: 5,
         description: "Honestly didn't even need the 10 minutes. She got me in 4 😂 Knew exactly what I wanted, like she read my mind before I even said anything",
-        creatorImage: '/images/creator-star1.jpg',
+        creatorImage: '/images/creator-star3.jpg',
         tags: ["8 custom pics", "Video message", "Playful"],
     },
     {
@@ -409,7 +409,7 @@ export const TEMP_REVIEWS = [
         tags: ["8 custom pics", "Playful", "Curvy"],
     },
     {
-        profilePic: '/images/creator-star1.jpg',
+        profilePic: '/images/creator-star3.jpg',
         name: 'Deja Vu',
         username: 'Dejavu@123',
         postedAt: '23m ago',
