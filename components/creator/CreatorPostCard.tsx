@@ -105,15 +105,15 @@ console.log(Logo);
             className="absolute flex top-3.75 left-3.75 gap-1.25">
             {
               isNew ? <div
-                className="py-1 px-2.25 bg-center bg-cover text-foreground text-xs align-middle rounded-[6px]"
+                className="flex items-center justify-center w-10 h-6 bg-center bg-cover text-foreground text-xs align-middle rounded-[6px]"
                 style={{ backgroundImage: `url('/images/gradient-background.png')` }}
               >
                 <Text className="leading-4" size={'xs'}>New</Text>
               </div> : null
             }
             {
-              isLocked ? <div className="p-1.5 bg-premium text-black rounded-[6px]">
-                <LockFilledIcon />
+              isLocked ? <div className="h-6 w-6 flex items-center justify-center bg-premium text-black rounded-[6px]">
+                <LockFilledIcon className="h-3 w-3"/>
               </div> : null
             }
           </motion.div> : null}

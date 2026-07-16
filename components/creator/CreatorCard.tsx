@@ -87,6 +87,7 @@ function CreatorCard({
         className={`mt-3 px-3 rounded-[12px] ${!isSuggestion ? 'text-foreground' : ''}`}
         variant={isSuggestion ? 'active' : 'default'}
         icon={isSuggestion ? <AddIcon className="w-2.5" /> : null}
+        fontSize={'sm'}
       >
         {isSuggestion ? "Follow" : "+ 10 more"}
       </Button>
