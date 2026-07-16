@@ -35,3 +35,4 @@ export { default as TrendingFlameIcon } from "@/assets/icons/trending-flame.svg"
 export { default as ChuckyLogoIcon } from "@/assets/icons/Chucky_logo.svg";
 export { default as AmericanPieIcon } from "@/assets/icons/Americanpie-logo.svg";
 export { default as DexterIcon } from "@/assets/icons/dexter.svg";
+export { default as CheckIcon } from "@/assets/icons/check.svg";

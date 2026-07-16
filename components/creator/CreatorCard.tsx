@@ -1,6 +1,6 @@
 "use client"
 
-import { AddIcon, FlashFilledIcon, LikeFilledIcon } from "@/assets/icons";
+import { AddIcon, CheckIcon, FlashFilledIcon, LikeFilledIcon } from "@/assets/icons";
 import { Text } from "../ui/text"
 import { motion } from "motion/react";
 import { Button } from "../ui/button";
@@ -27,6 +27,8 @@ function CreatorCard({
   likePercentage,
   bordered = false
 }: CreatorCardProps) {
+
+  const isFolllowing = name === 'Kajal Monroe';
 
   return (
     <div className="cursor-pointer">
@@ -84,12 +86,12 @@ function CreatorCard({
       }
 
       <Button
-        className={`mt-3 px-3 rounded-[12px] ${!isSuggestion ? 'text-foreground' : ''}`}
+        className={`mt-3 px-3 rounded-[12px] ${!isSuggestion ? 'text-foreground' : ''} ${isFolllowing ? "bg-card-hover-bg text-card-hover hover:bg-card-hover-bg hover:stext-card-hover" : ""}`}
         variant={isSuggestion ? 'active' : 'default'}
-        icon={isSuggestion ? <AddIcon className="w-2.5" /> : null}
+        icon={isSuggestion ? isFolllowing ? <CheckIcon className="w-3" /> : <AddIcon className="w-2.5" /> : null}
         fontSize={'sm'}
       >
-        {isSuggestion ? "Follow" : "+ 10 more"}
+        {isSuggestion ? isFolllowing ? "Following" : "Follow" : "+ 10 more"}
       </Button>
     </div>
   )
