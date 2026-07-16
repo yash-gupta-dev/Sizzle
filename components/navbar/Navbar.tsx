@@ -26,7 +26,7 @@ export default function Navbar() {
                     <div className="flex flex-1 items-center justify-end gap-2">
                         <Button
                             icon={<AddIcon className="w-3.5 h-3.5 text-foreground" />}
-                            className="bg-center bg-cover text-foreground"
+                            className="bg-center bg-cover text-foreground leading-5.5"
                             style={{ backgroundImage: `url('/images/gradient-background.png')` }}
                             weight={"normal"}
                         >
@@ -37,24 +37,27 @@ export default function Navbar() {
                             icon={<ChatBubbleIcon className="w-4 h-4" />}
                             variant={"inactiveWithActiveText"}
                             bordered={"slim"}
+                            className={'leading-5.5'}
                         />
 
                         <Button
                             icon={<BellNotificationIcon className="w-4 h-4" />}
                             variant={"inactiveWithActiveText"}
                             bordered={"slim"}
+                            className={'leading-5.5'}
                         />
 
                         <Button
                             icon={<UsdCircleIcon className="w-4 h-4" />}
                             variant={"inactiveWithActiveText"}
                             bordered={"slim"}
+                            className={'leading-5.5'}
                         >
                             1280.55
                         </Button>
 
                         {/* @ts-ignore */}
-                        <Avatar style={{ cornerShape: 'squircle' }} className="h-10 w-auto aspect-square rounded-4xl [&::after]:border-0">
+                        <Avatar style={{ cornerShape: 'squircle' }} className="h-11 w-auto aspect-square rounded-4xl [&::after]:border-0">
                             {/* @ts-ignore */}
                             <AvatarImage style={{ cornerShape: 'squircle' }} className="w-full h-full object-cover rounded-4xl" src={TEMP_USER_IMAGE} />
                             <AvatarFallback>SZ</AvatarFallback>

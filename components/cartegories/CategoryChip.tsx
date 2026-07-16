@@ -14,7 +14,7 @@ function CategoryChip({
 
   return (
     <Button
-      className={!isAll ? 'bg-transparent' : ""}
+      className={`h-10 ${!isAll ? 'bg-transparent' : ""}`}
       variant={isAll ? 'active' : 'inactiveWithActiveText'}
       weight={'normal'}
       bordered={'slim'}

@@ -12,12 +12,12 @@ const buttonVariants = cva(
       variant: {
         default: "bg-(--gray-3) text-(--gray-8) hover:bg-card-muted-hover hover:text-foreground",
         active: "bg-foreground text-black hover:bg-(--gray-9)",
-        inactiveWithActiveText: "bg-card text-foreground hover:bg-card-muted-hover",
+        inactiveWithActiveText: "bg-background text-foreground hover:bg-card-muted-hover",
       },
       size: {
         default:
-          "h-8 gap-1.5",
-        xs: "h-6 gap-1 rounded-[min(var(--radius-md),10px)] px-2 text-xs in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
+          "h-11 gap-1.5",
+        xs: "h-6 gap-1 rounded-[min(var(--radius-md),10px)] px-3.5 text-xs in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
         sm: "h-7 gap-1 rounded-[min(var(--radius-md),12px)] px-2.5 text-[0.8rem] in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
         lg: "h-9 gap-1.5 px-2.5",
         icon: "size-8",
@@ -29,7 +29,7 @@ const buttonVariants = cva(
       },
       bordered: {
         default: "border-0",
-        slim: "border border-border-muted hover:border-border-muted-hover"
+        slim: "border border-[#FFFFFF33] hover:border-border-muted-hover"
       },
     },
     defaultVariants: {
