@@ -1,6 +1,6 @@
 "use client"
 
-import { ChatBubbleIcon, EyeIcon, HeartFilledIcon, LockFilledIcon, OptionsIcon, SaveBookmarkIcon, UsdCircleIcon } from "@/assets/icons";
+import { AmericanPieIcon, ChatBubbleIcon, ChuckyLogoIcon, DexterIcon, EyeIcon, HeartFilledIcon, LockFilledIcon, OptionsIcon, SaveBookmarkIcon, UsdCircleIcon } from "@/assets/icons";
 import { Text } from "../ui/text"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import Image from "next/image";
@@ -14,6 +14,7 @@ import { cn } from "@/lib/utils";
 type PostDataType = typeof TEMP_FEATURED_CREATORS[0]
 
 export interface CreatorCardPostProps extends PostDataType {
+  index?: number | null;
   minHeight?: number;
   isFromProfile?: boolean;
   isCertified?: boolean;
@@ -21,6 +22,7 @@ export interface CreatorCardPostProps extends PostDataType {
 }
 
 function CreatorPostCard({
+  index = null,
   cover,
   title,
   creator,
@@ -35,6 +37,28 @@ function CreatorPostCard({
   isCertified = false,
   stats
 }: CreatorCardPostProps) {
+
+let Logo = <AmericanPieIcon className="w-30 h-12"/>;
+
+if (index !== null) {
+  const indexModulo = index % 4;
+
+  switch (indexModulo) {
+    case 0:
+      Logo = <DexterIcon className="w-30 h-11.5" />;
+      break;
+    case 1:
+      Logo = <ChuckyLogoIcon className="w-30 h-8" />;
+      break;
+    case 2:
+      Logo = <AmericanPieIcon className="w-30 h-12"/>;
+      break;
+    case 3:
+      Logo = <AmericanPieIcon className="w-30 h-12"/>;
+      break;
+  }
+}
+console.log(Logo);
 
   const parentVariants = {
     initial: {},
@@ -96,13 +120,7 @@ function CreatorPostCard({
 
           {/* Tags\Duration */}
           <motion.div variants={tagsVariants} className="flex flex-col gap-5 self-end group-hover:hidden">
-            <Image
-              src={creator.logo}
-              alt={creator.name}
-              objectFit="contain"
-              width={80}
-              height={20}
-            />
+            {index !== null ? Logo : null}
             <div className="flex gap-1.25 mb-3.75">
               {
                 duration ? <div className="flex h-fit bg-translucent-bg py-0.5 px-2 gap-1 text-[12px] rounded-[6px]">

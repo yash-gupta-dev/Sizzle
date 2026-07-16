@@ -56,8 +56,8 @@ function SliderHOC({
                 </div>
 
                 {showNavButtons ? <div className="flex gap-1.5">
-                    <Button icon={<LeftDirectionIcon className="w-3 h-3" />} onClick={handlePrevious} className={'p-3 rounded-[12px]'} />
-                    <Button icon={<RightDirectionIcon className="w-3 h-3" />} onClick={handleNext} className={'p-3 rounded-[12px]'} />
+                    <Button icon={<LeftDirectionIcon className="w-4.5 h-4.5 text-foreground" />} onClick={handlePrevious} className={'h-8.5 w-8.5 rounded-[12px] bg-slider-btn-bg hover:bg-slider-btn-hover'} />
+                    <Button icon={<RightDirectionIcon className="w-4.5 h-4.5 text-foreground" />} onClick={handleNext} className={'h-8.5 w-8.5 rounded-[12px] bg-slider-btn-bg hover:bg-slider-btn-hover'} />
                 </div> : null}
             </div>
                 : null}

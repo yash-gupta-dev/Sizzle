@@ -70,7 +70,7 @@ export default function Page() {
         {
           TEMP_FEATURED_CREATORS.map((creator, i) => {
             return <CarouselItem className="basis-1/4 w-78 p-0" key={creator.title + i}>
-              <CreatorPostCard {...creator} />
+              <CreatorPostCard index={i} {...creator} />
             </CarouselItem>
           })
         }
@@ -92,7 +92,7 @@ export default function Page() {
         {
           TEMP_FEATURED_CREATORS.map((creator, i) => {
             return <CarouselItem className="basis-1/4 w-78 p-0" key={creator.title + i}>
-              <CreatorPostCard rank={i + 1} {...creator} />
+              <CreatorPostCard index={i} rank={i + 1} {...creator} />
             </CarouselItem>
           })
         }
@@ -105,7 +105,7 @@ export default function Page() {
         {
           TEMP_FEATURED_CREATORS.map((creator, i) => {
             return <CarouselItem className="basis-1/4 w-78 p-0" key={creator.title + i}>
-              <CreatorPostCard rank={i + 1} {...creator} />
+              <CreatorPostCard index={i} rank={i + 1} {...creator} />
             </CarouselItem>
           })
         }
@@ -127,7 +127,7 @@ export default function Page() {
         {
           TEMP_FEATURED_CREATORS.map((creator, i) => {
             return <CarouselItem className="basis-1/4 w-78 p-0" key={creator.title + i}>
-              <CreatorPostCard {...creator} />
+              <CreatorPostCard index={i} {...creator} />
             </CarouselItem>
           })
         }
@@ -160,7 +160,7 @@ export default function Page() {
         {
           TEMP_FEATURED_CREATORS.map((creator, i) => {
             return <CarouselItem className="basis-1/4 w-78 p-0" key={creator.title + i}>
-              <CreatorPostCard {...creator} isCertified />
+              <CreatorPostCard index={i} {...creator} isCertified />
             </CarouselItem>
           })
         }
@@ -189,7 +189,7 @@ export default function Page() {
         {
           TEMP_FEATURED_CREATORS.map((creator, i) => {
             return <CarouselItem className="basis-1/4 w-78 p-0" key={creator.title + i}>
-              <CreatorPostCard {...creator} />
+              <CreatorPostCard index={i} {...creator} />
             </CarouselItem>
           })
         }
@@ -219,7 +219,7 @@ export default function Page() {
         {
           TEMP_FEATURED_CREATORS.map((creator, i) => {
             return <CarouselItem className="basis-1/4 w-78 p-0" key={creator.title + i}>
-              <CreatorPostCard {...creator} />
+              <CreatorPostCard index={i} {...creator} />
             </CarouselItem>
           })
         }
