@@ -8,6 +8,7 @@ export interface EveryonesBookingCreatorCardProps {
     name: string;
     image: string;
     primaryColor?: string;
+    borderColor?: string;
     categories: string[];
 }
 
@@ -16,6 +17,7 @@ function EveryonesBookingCreatorCard({
     rank,
     image,
     primaryColor,
+    borderColor,
     categories
 }: EveryonesBookingCreatorCardProps) {
 
@@ -30,7 +32,7 @@ function EveryonesBookingCreatorCard({
                 style={{ backgroundImage: `url(${image})` }}
             >
 
-                {!rank && <DynamicBorder className="m-3.75 z-30" borderColor={primaryColor} logoSize={10.5} />}
+                {!rank && <DynamicBorder className="m-3.75 z-30" borderColor={borderColor} logoSize={10.5} />}
 
                 <div className={`relative ${rank ? 'pb-0' : 'pb-11.5'} w-full rounded-b-[15px]`}
                     style={{

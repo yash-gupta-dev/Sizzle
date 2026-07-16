@@ -68,7 +68,7 @@ function CreatorSuggestionCard({
               <GradientText
                 className="absolute top-0 left-3 z-20"
                 gradient="linear-gradient(to bottom, #FFFFFF, #FFFFFF50)"
-                style={{ lineHeight: 1 }}
+                style={{ lineHeight: '48px' }}
                 size={'xl'}
               >{index + 1}</GradientText>
               <Image
