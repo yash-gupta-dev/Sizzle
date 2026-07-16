@@ -20,6 +20,7 @@ const nextConfig = {
                         overrides: { removeViewBox: false },
                       },
                     },
+                    "prefixIds",
                     { name: "convertColors", params: { currentColor: true } },
                   ],
                 },

@@ -184,7 +184,7 @@ if (index !== null) {
           <div className="flex items-center gap-2 text-text-secondary">
             <div className="flex items-center gap-1">
               <Avatar className="h-3.5 w-auto aspect-square rounded-[5px] [&::after]:border-0">
-                <AvatarImage className="w-full h-full object-cover rounded-sm" src={creator.image} />
+                <AvatarImage className="w-full h-full object-cover rounded-sm border-[0.5px] border-foreground/15" src={creator.image} />
                 <AvatarFallback>SZ</AvatarFallback>
               </Avatar>
               {!isFromProfile ? <Text size={'sm'} className="text-card-hover">{creator.name}</Text> : null}

@@ -86,7 +86,7 @@ function CreatorCard({
       }
 
       <Button
-        className={`mt-3 px-3 rounded-[12px] ${!isSuggestion ? 'text-foreground' : ''} ${isFolllowing ? "bg-card-hover-bg text-card-hover hover:bg-card-hover-bg hover:stext-card-hover" : ""}`}
+        className={`mt-3 px-3 rounded-[12px] ${!isSuggestion ? 'text-foreground' : ''} ${(isSuggestion && isFolllowing) ? "bg-card-hover-bg text-card-hover hover:bg-card-hover-bg hover:stext-card-hover" : ""}`}
         variant={isSuggestion ? 'active' : 'default'}
         icon={isSuggestion ? isFolllowing ? <CheckIcon className="w-3" /> : <AddIcon className="w-2.5" /> : null}
         fontSize={'sm'}
