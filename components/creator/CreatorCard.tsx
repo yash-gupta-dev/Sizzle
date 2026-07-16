@@ -46,15 +46,15 @@ function CreatorCard({
       <div className="flex gap-2">
         <Text className="leading-5">{name}</Text>
 
-        <div className="p-px min-w-8.5 rounded-[4px]"
+        {isNew ? <div className="p-px min-w-8.5 rounded-[4px]"
           style={{ backgroundImage: "linear-gradient(to left, #D9107F, #EE1E03, #F61785, #FC7C20)" }}
         >
           <div className="bg-background h-full rounded-[3px] px-1.25">
-            <GradientText className="text-center leading-[15px]" gradient="linear-gradient(to left, #D9107F, #EE1E03, #F61785, #FC7C20)" style={{
+            <GradientText className="text-center leading-3.75" gradient="linear-gradient(to left, #D9107F, #EE1E03, #F61785, #FC7C20)" style={{
               fontSize: 12
             }}>New</GradientText>
           </div>
-        </div>
+        </div> : null}
       </div>
 
       {isSuggestion ? <Text className="text-card-hover" weight={'normal'} size={'sm'}>{categories?.join(" · ")}</Text>

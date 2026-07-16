@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import { Text } from "../ui/text";
-import { EyeIcon, LeaderBoardGradientIcon, SizzleLogo } from "@/assets/icons";
+import { CrownRewardIcon, EyeIcon, GalleryIcon, LeaderBoardGradientIcon, PlaylistIcon, SizzleLogo } from "@/assets/icons";
 import DynamicBorder from "../ui/dynamicBorder";
 
 interface HeroCardProps {
@@ -16,9 +16,9 @@ interface HeroCardProps {
     tags: Array<string>,
     description: string | undefined,
     stats?: {
-        pics: number,
-        videos: number,
-        likes: number,
+        photos?: number,
+        videos?: number,
+        score?: number,
     },
 }
 
@@ -30,8 +30,11 @@ export default function HeroCard({
     duration,
     tags,
     views,
-    description
+    description,
+    stats
 }: HeroCardProps) {
+    console.log(stats);
+
     return (
         <motion.div
             initial={false}
@@ -84,21 +87,36 @@ export default function HeroCard({
                             }
                         </div>
 
-                        <div className="flex gap-1.25">
-                            {
-                                duration ? <div className="flex leading-5.5 bg-translucent-bg py-0.5 px-2 gap-1 text-[12px] rounded-[6px]">
-                                    <Text size={'xs'}>4K</Text>
-                                    <Text size={'xs'} weight={'light'}>{duration}</Text>
-                                </div> : null
-                            }
-                            {
-                                tags.map(t => {
-                                    return <div className="leading-5.5 bg-translucent-bg py-0.5 px-2 text-[12px] rounded-[6px]" key={t}>
-                                        <Text size={'xs'}>#{t}</Text>
-                                    </div>
-                                })
-                            }
-                        </div>
+                        {
+                            stats?.videos ? <div className="flex items-center gap-3">
+                                <div className="flex items-center gap-1.5">
+                                    <GalleryIcon />
+                                    <Text size={'sm'} weight={'normal'}>{stats.photos}</Text>
+                                </div>
+                                <div className="flex items-center gap-1.5">
+                                    <PlaylistIcon />
+                                    <Text size={'sm'} weight={'normal'}>{stats.videos}</Text>
+                                </div>
+                                <div className="flex items-center gap-1.5">
+                                    <CrownRewardIcon />
+                                    <Text size={'sm'} weight={'normal'}>{stats.score}</Text>
+                                </div>
+                            </div> : <div className="flex gap-1.25">
+                                {
+                                    duration ? <div className="flex leading-5.5 bg-translucent-bg py-0.5 px-2 gap-1 text-[12px] rounded-[6px]">
+                                        <Text size={'xs'}>4K</Text>
+                                        <Text size={'xs'} weight={'light'}>{duration}</Text>
+                                    </div> : null
+                                }
+                                {
+                                    tags.map(t => {
+                                        return <div className="leading-5.5 bg-translucent-bg py-0.5 px-2 text-[12px] rounded-[6px]" key={t}>
+                                            <Text size={'xs'}>#{t}</Text>
+                                        </div>
+                                    })
+                                }
+                            </div>
+                        }
                     </div>
                 </div>
             </div>

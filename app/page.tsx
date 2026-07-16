@@ -35,6 +35,7 @@ export default function Page() {
                   duration={"6:03"}
                   views={item.views}
                   description={item.description}
+                  stats={item?.stats}
                 />
               </CarouselItem>
             })

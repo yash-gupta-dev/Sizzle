@@ -19,7 +19,11 @@ export const TEMP_HERO_DATA = [
         tags: ["Beauty"],
         views: 812,
         description: "Life got so serious lately, I have almost forgot I used to paint 😅 may this post will be a",
-        stats: {}
+        stats: {
+            photos: 480,
+            videos: 26,
+            score: 780
+        }
     },
     {
         image: "/images/banner1.webp",
@@ -30,7 +34,11 @@ export const TEMP_HERO_DATA = [
         tags: ["Beauty", "Fitness"],
         views: 212,
         description: "I got so serious lately, I have almost forgot I used to paint 😅 may this post will be a",
-        stats: {}
+        stats: {
+            photos: 320,
+            videos: 18,
+            score: 950
+        }
     },
         {
         image: "/images/banner2.webp",
