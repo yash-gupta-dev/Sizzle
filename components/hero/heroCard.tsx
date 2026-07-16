@@ -62,7 +62,7 @@ export default function HeroCard({
 
                     <div className="flex flex-col justify-betweens self-end">
                         {
-                            index % 2 ? <AmericanPieIcon className="w-20 h-9.75"/> : <ChuckyLogoIcon className="w-20 h-5"/>
+                            index % 2 ? <AmericanPieIcon className="w-20 h-9.75" /> : <ChuckyLogoIcon className="w-20 h-5" />
                         }
                         <div className="mb-5">
                             {
@@ -115,13 +115,13 @@ export default function HeroCard({
             </div>
 
             {/* MARK: Hero Description */}
-            <div className="pt-3 text-[16px]">
+            <div className="pt-3 gap-0.5">
                 <Text>{description}</Text>
                 <div className="flex items-center gap-2 text-card-hover">
-                    <Text>{director}</Text>
+                    <Text size={'sm'}>{director}</Text>
                     <div className="flex items-center gap-1">
                         <EyeIcon className="w-3" />
-                        <Text weight={'normal'}>{views} views • 2d</Text>
+                        <Text weight={'normal'} size={'sm'}>{views} views • 2d</Text>
                     </div>
                 </div>
             </div>
