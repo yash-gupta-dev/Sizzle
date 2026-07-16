@@ -24,13 +24,13 @@ export default function Page() {
       }}>
         <CarouselContent className="w-full ml-0 flex justify-between pl-3.5 pr-7.5">
           {
-            TEMP_HERO_DATA.map((item) => {
+            TEMP_HERO_DATA.map((item, index) => {
               return <CarouselItem key={item.director} className="flex-1 min-w-[49vw] pl-0">
                 <HeroCard
+                  index={index}
                   image={item.image}
                   director={item.director}
                   badge={item.badge}
-                  logo={item.logo}
                   tags={item.tags}
                   duration={"6:03"}
                   views={item.views}

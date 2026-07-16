@@ -1,15 +1,14 @@
 "use client"
 
-import Image from "next/image";
 import { motion } from "motion/react";
 import { Text } from "../ui/text";
-import { CrownRewardIcon, EyeIcon, GalleryIcon, LeaderBoardGradientIcon, PlaylistIcon, SizzleLogo } from "@/assets/icons";
+import { AmericanPieIcon, ChuckyLogoIcon, CrownRewardIcon, EyeIcon, GalleryIcon, LeaderBoardGradientIcon, PlaylistIcon, SizzleLogo } from "@/assets/icons";
 import DynamicBorder from "../ui/dynamicBorder";
 
 interface HeroCardProps {
+    index: number,
     image: string,
     badge: string,
-    logo: string,
     director: string,
     duration: string,
     views: number,
@@ -23,9 +22,9 @@ interface HeroCardProps {
 }
 
 export default function HeroCard({
+    index,
     image,
     badge,
-    logo,
     director,
     duration,
     tags,
@@ -33,8 +32,6 @@ export default function HeroCard({
     description,
     stats
 }: HeroCardProps) {
-    console.log(stats);
-
     return (
         <motion.div
             initial={false}
@@ -64,13 +61,9 @@ export default function HeroCard({
                 <div className="absolute left-12.5 bottom-12.5">
 
                     <div className="flex flex-col justify-betweens self-end">
-                        <Image
-                            src={logo}
-                            alt={director}
-                            objectFit="contain"
-                            width={80}
-                            height={80}
-                        />
+                        {
+                            index % 2 ? <AmericanPieIcon className="w-20 h-9.75"/> : <ChuckyLogoIcon className="w-20 h-5"/>
+                        }
                         <div className="mb-5">
                             {
                                 director.split(" ").map((word, index) => (
@@ -104,14 +97,14 @@ export default function HeroCard({
                             </div> : <div className="flex gap-1.25">
                                 {
                                     duration ? <div className="flex leading-5.5 bg-translucent-bg py-0.5 px-2 gap-1 text-[12px] rounded-[6px]">
-                                        <Text size={'xs'}>4K</Text>
-                                        <Text size={'xs'} weight={'light'}>{duration}</Text>
+                                        <Text size={'xs'} className="align-text-bottom">4K</Text>
+                                        <Text size={'xs'} weight={'light'} className="align-text-bottom">{duration}</Text>
                                     </div> : null
                                 }
                                 {
                                     tags.map(t => {
-                                        return <div className="leading-5.5 bg-translucent-bg py-0.5 px-2 text-[12px] rounded-[6px]" key={t}>
-                                            <Text size={'xs'}>#{t}</Text>
+                                        return <div className="leading-5.5 bg-translucent-bg py-0.5 px-2 rounded-[6px]" key={t}>
+                                            <Text size={'xs'} className="align-text-bottom">#{t}</Text>
                                         </div>
                                     })
                                 }

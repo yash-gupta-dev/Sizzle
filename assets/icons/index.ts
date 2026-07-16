@@ -32,3 +32,5 @@ export { default as UserIcon } from "@/assets/icons/user.svg";
 export { default as StarHollowIcon } from "@/assets/icons/star-hollow.svg";
 export { default as SizzleCertifiedIcon } from "@/assets/icons/sizzle-certified.svg";
 export { default as TrendingFlameIcon } from "@/assets/icons/trending-flame.svg";
+export { default as ChuckyLogoIcon } from "@/assets/icons/Chucky_logo.svg";
+export { default as AmericanPieIcon } from "@/assets/icons/Americanpie-logo.svg";

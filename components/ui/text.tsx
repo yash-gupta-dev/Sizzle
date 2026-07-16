@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-const textVariants = cva("text-inherit leading-0", {
+const textVariants = cva("text-inherit leading-5.5", {
   variants: {
     size: {
       xxs: "text-[10px]",

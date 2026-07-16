@@ -2,7 +2,6 @@ export const TEMP_HERO_DATA = [
     {
         image: "/images/banner1.webp",
         badge: "ORIGINAL",
-        logo: "/images/Chucky_logo.png",
         director: "Adela Morales",
         duration: "6:03",
         tags: ["Beauty"],
@@ -13,7 +12,6 @@ export const TEMP_HERO_DATA = [
     {
         image: "/images/banner2.webp",
         badge: "TOP EARNER",
-        logo: "/images/American-Pie.png",
         director: "Saint Lavigne",
         duration: "6:03",
         tags: ["Beauty"],
@@ -28,7 +26,6 @@ export const TEMP_HERO_DATA = [
     {
         image: "/images/banner1.webp",
         badge: "TOP EARNER",
-        logo: "/images/Chucky_logo.png",
         director: "Eliza Ibarra",
         duration: "7:03",
         tags: ["Beauty", "Fitness"],
@@ -43,7 +40,6 @@ export const TEMP_HERO_DATA = [
         {
         image: "/images/banner2.webp",
         badge: "Original",
-        logo: "/images/American-Pie.png",
         director: "Leone Cole",
         duration: "6:03",
         tags: ["Beauty"],
